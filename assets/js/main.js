@@ -1,13 +1,20 @@
-const number = 68;
+// setting DOM elements and url for fetching
+const number = 4;
 const url = `https://pokeapi.co/api/v2/pokemon/${number}`;
+const pokeImage = document.getElementById('pokeImg');
+const pokeName = document.getElementById('pokeAnswer');
+
+// game score and quesiton setup
+let score = 0;
+let questionCounter = 0;
 
 function fetchPokemon() {
 
   fetch(url)
    .then(response => response.json())
-   .then(data => {
-   document.getElementById('pokeImg').innerHTML = `<img src="${data.sprites.front_default}" height="250" width="250">`;
-   document.getElementById('answer1').innerHTML = data.name.toUpperCase();
+   .then(pokeData => {
+   pokeImage.innerHTML = `<img src="${pokeData.sprites.front_default}" height="250" width="250">`;
+   pokeName.innerHTML = pokeData.name.toUpperCase();
 })
   .catch((error) => console.log(error))
 }
