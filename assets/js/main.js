@@ -3,13 +3,14 @@ const number = 4;
 const url = `assets/js/pokemon-test.json`;
 const pokeImage = document.getElementById('pokeImg');
 const pokeAnswer = Array.from(document.getElementsByClassName('poke-answer'));
-console.log(pokeAnswer);
+//console.log(pokeAnswer); // for testing purposes
 
 // game score and quesiton setup
 let score = 0;
 let questionCounter = 0;
 const questionMax = 10;
 
+// fetches pokemon data
 function fetchPokemon() {
 
   fetch('assets/js/pokemon-test.json')
@@ -21,3 +22,9 @@ function fetchPokemon() {
 }
   
 fetchPokemon();
+
+// starts the game
+startQuiz();
+
+// resets the game
+resetQuiz();
