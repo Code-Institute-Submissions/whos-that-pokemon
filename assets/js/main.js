@@ -2,12 +2,13 @@
 const number = 4;
 const url = `assets/js/pokemon-test.json`;
 const pokeImage = document.getElementById('pokeImg');
-const pokeName = document.getElementsByClassName('poke-answer');
-//console.log(pokeName[1].innerHTML);
+const pokeAnswer = Array.from(document.getElementsByClassName('poke-answer'));
+console.log(pokeAnswer);
 
 // game score and quesiton setup
 let score = 0;
 let questionCounter = 0;
+const questionMax = 10;
 
 function fetchPokemon() {
 
