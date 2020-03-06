@@ -2,7 +2,8 @@
 const number = 4;
 const url = `https://pokeapi.co/api/v2/pokemon/${number}`;
 const pokeImage = document.getElementById('pokeImg');
-const pokeName = document.getElementById('pokeAnswer');
+const pokeName = document.getElementsByClassName('poke-answer');
+//console.log(pokeName[1].innerHTML);
 
 // game score and quesiton setup
 let score = 0;
