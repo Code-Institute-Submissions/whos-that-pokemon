@@ -3,7 +3,9 @@ const number = 4;
 const url = `assets/js/pokemon-test.json`;
 const pokeImage = document.getElementById('pokeImg');
 const pokeAnswer = Array.from(document.getElementsByClassName('poke-answer'));
-//console.log(pokeAnswer); // for testing purposes
+// for access to first 150 pokemon randomly
+const pokeNum = Math.floor(Math.random() * 151);
+console.log(pokeNum); // for testing purposes
 
 // game score and quesiton setup
 let score = 0;
@@ -13,10 +15,10 @@ const questionMax = 10;
 // fetches pokemon data
 function fetchPokemon() {
 
-  fetch('assets/js/pokemon-test.json')
+  fetch(url)
    .then(response => response.json())
    .then(pokeData => {
-   pokeImage.innerHTML = `<img src="${pokeData[0].sprites.front_default}" height="250" width="250">`;
+   console.log(pokeData);
 })
   .catch((error) => console.log(error))
 }
