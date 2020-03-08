@@ -5,7 +5,8 @@ const pokeImage = document.getElementById('pokeImg');
 const pokeAnswer = Array.from(document.getElementsByClassName('poke-answer'));
 // for access to first 150 pokemon randomly
 const pokeNum = Math.floor(Math.random() * 151);
-console.log(pokeNum); // for testing purposes
+let pokeQuestions = [];
+//console.log(pokeAnswer); // for testing purposes
 
 // game score and quesiton setup
 let score = 0;
@@ -26,7 +27,14 @@ function fetchPokemon() {
 fetchPokemon();
 
 // starts the game
+function startQuiz() {
+    questionCounter = 0;
+    score = 0;
+}
+
 startQuiz();
 
 // resets the game
 resetQuiz();
+
+pokeAnswer.addEventListener('click', function(){ alert("Hello World!"); });
