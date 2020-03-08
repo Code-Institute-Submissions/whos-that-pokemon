@@ -37,5 +37,3 @@ startQuiz();
 
 // resets the game
 resetQuiz();
-
-pokeAnswer.addEventListener('click', function(){ alert("Hello World!"); });
