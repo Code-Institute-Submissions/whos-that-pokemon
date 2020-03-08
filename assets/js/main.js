@@ -3,13 +3,14 @@ const number = 4;
 const url = `assets/js/pokemon-test.json`;
 const pokeImage = document.getElementById('pokeImg');
 const pokeAnswer = Array.from(document.getElementsByClassName('poke-answer'));
+const questionData = document.getElementById('questionCount');
+const scoreData = document.getElementById('scoreCount');
 // for access to first 150 pokemon randomly
 const pokeNum = Math.floor(Math.random() * 151);
 let pokeQuestions = [];
-//console.log(pokeAnswer); // for testing purposes
 
 // game score and quesiton setup
-let score = 0;
+let scoreCount = 0;
 let questionCounter = 0;
 const questionMax = 10;
 
@@ -29,7 +30,7 @@ fetchPokemon();
 // starts the game
 function startQuiz() {
     questionCounter = 0;
-    score = 0;
+    scoreCount = 0;
 }
 
 startQuiz();
