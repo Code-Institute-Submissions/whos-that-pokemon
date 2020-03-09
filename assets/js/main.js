@@ -121,24 +121,20 @@ let pokeQuestions = [
 }
   ];
 
-// fetches pokemon data
-function fetchPokemon() {
+  function startQuiz() {
+  questionCounter = 0;
+  score = 0;
+  availableMon = [...pokeQuestions];
+  console.log(availableMon);
+  getNewPokemon();
+};
 
-  fetch(url)
-   .then(response => response.json())
-   .then(pokeData => {
-   console.log(pokeData);
-})
-  .catch((error) => console.log(error))
-}
-  
-fetchPokemon();
+function getNewPokemon() {
+  const pokeIndex = Math.floor(Math.random() * availableMon.length);
+  currentMon = availableMon[pokeIndex];
+  pokeImage.innerHTML = `<img src="${currentMon.sprites.front_default}" height="250" width="250">`;
 
-// starts the game
-function startQuiz() {
-    questionCounter = 0;
-    scoreCount = 0;
-}
+};
 
 startQuiz();
 
