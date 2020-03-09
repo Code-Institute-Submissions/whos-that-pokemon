@@ -1,8 +1,6 @@
 // setting DOM elements and url for fetching
-const number = 4;
-const url = `assets/js/pokemon-test.json`;
+let userChoice = Array.from(document.getElementsByClassName('poke-name'));
 const pokeImage = document.getElementById('pokeImg');
-const pokeAnswer = Array.from(document.getElementsByClassName('poke-answer'));
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
 // for access to first 150 pokemon randomly
