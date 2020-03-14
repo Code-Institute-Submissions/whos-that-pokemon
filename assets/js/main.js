@@ -31,3 +31,6 @@ Promise.all(promises).then((results) => {
 };
 
 fetchPokemon();
+
+// function to randomly sort pokemon data
+shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
