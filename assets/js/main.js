@@ -32,5 +32,15 @@ Promise.all(promises).then((results) => {
 
 fetchPokemon();
 
+function pushMonToDOM() {
+  currentMon = [];
+  currentMon.push(...pokeData.slice(0, 4));
+  pokeImage.innerHTML = `<img src="${currentMon[0].image}" height="250" width="250">`
+  console.log(currentMon);
+}
+
+// shuffle random 4 pokemon in sliced array
+shuffleFour = (arrayMon) => Math.floor(Math.random() * arrayMon.length);
+
 // function to randomly sort pokemon data
 shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
