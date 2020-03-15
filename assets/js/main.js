@@ -3,6 +3,7 @@ let userChoice = Array.from(document.getElementsByClassName('poke-name'));
 const pokeImage = document.getElementById('pokeImg');
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
+const gameContainer = document.getElementById('game-container');
 
 
 // game score and question setup
@@ -44,3 +45,15 @@ shuffleFour = (arrayMon) => Math.floor(Math.random() * arrayMon.length);
 
 // function to randomly sort pokemon data
 shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
+
+
+/*
+**************************
+    Event listeners
+**************************
+*/
+
+$("#start-game").click(function(){
+    $("#landing-page").hide();
+    gameContainer.classList.remove("d-none");
+  });
