@@ -7,11 +7,9 @@ const gameContainer = document.getElementById('game-container');
 console.log(userChoice);
 
 // game score and question setup
-let currentMon = {};
 let scoreCount = 0;
 let questionCounter = 0;
 const questionMax = 10;
-let availableMon = [];
 
 /*
 **************************
