@@ -7,7 +7,7 @@ const gameContainer = document.getElementById('game-container');
 console.log(userChoice);
 
 // game score and question setup
-let scoreCount = 0;
+let scoreCounter  = 0;
 let questionCounter = 0;
 const questionMax = 10;
 
@@ -59,6 +59,17 @@ function loadPokemonNames() {
     userChoice[3].innerText = currentMon[2].name.toUpperCase();
     console.log(choice);
 }
+
+// function to check user input
+function checkPokemonAnswer() {
+    userChoice.forEach(answer => {
+        answer.addEventListener('click', e => {
+            console.log(e.target);
+        });
+    });
+}
+
+checkPokemonAnswer();
 
 /*
 **************************
