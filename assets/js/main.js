@@ -4,6 +4,7 @@ const pokeImage = document.getElementById('pokeImg');
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
 const gameContainer = document.getElementById('game-container');
+const pokemon = document.querySelector('#pokeImg img');
 console.log(userChoice);
 
 // game score and question setup
@@ -40,9 +41,11 @@ fetchPokemon();
 function pushMonToDOM() {
   currentMon = [];
   currentMon.push(...pokeData.slice(0, 4));
-  pokeImage.innerHTML = `<img src="${currentMon[shuffleFour(currentMon)].image}" height="250" width="250">`;
+  matchMon = currentMon[shuffleFour(currentMon)];
   loadPokemonNames();
   console.log(currentMon);
+  displayMonImage();
+  checkPokemonAnswer();
 }
 
 // shuffle random 4 pokemon in sliced array
@@ -64,12 +67,15 @@ function loadPokemonNames() {
 function checkPokemonAnswer() {
     userChoice.forEach(answer => {
         answer.addEventListener('click', e => {
-            console.log(e.target);
+            const selectedChoice = e.target;
+            console.log(selectedChoice.name == matchMon.name);
         });
     });
 }
 
-checkPokemonAnswer();
+function displayMonImage() {
+    pokemon.src = matchMon.image;
+}
 
 /*
 **************************
