@@ -68,7 +68,11 @@ function checkPokemonAnswer() {
     userChoice.forEach(answer => {
         answer.addEventListener('click', e => {
             const selectedChoice = e.target;
-            console.log(selectedChoice.innerText.toLowerCase() == matchMon.name)
+            if (selectedChoice.innerText.toLowerCase() == matchMon.name) {
+                alert('Correct choice!');
+            } else {
+                alert('Wrong choice!');
+            }
         });
     });
 }
