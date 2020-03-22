@@ -68,11 +68,14 @@ function checkPokemonAnswer() {
     userChoice.forEach(answer => {
         answer.addEventListener('click', e => {
             const selectedChoice = e.target;
+            let classToApply;
             if (selectedChoice.innerText.toLowerCase() == matchMon.name) {
-                alert('Correct choice!');
+                classToApply = 'rightanswer';
             } else {
-                alert('Wrong choice!');
+                classToApply = 'wronganswer';
             }
+            selectedChoice.parentElement.classList.add(classToApply);
+            console.log(classToApply);
         });
     });
 }
