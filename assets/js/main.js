@@ -47,9 +47,10 @@ function pushMonToDOM() {
   questionCounter++;
   questionData.innerText = `${questionCounter}/${questionMax}`;
 
-  loadPokemonNames();
-  displayMonImage();
-  checkPokemonAnswer();
+    generateNewMon();
+    displayMonImage();
+    loadPokemonNames();
+    checkPokemonAnswer();
 }
 
 // shuffle random 4 pokemon in sliced array
@@ -59,12 +60,11 @@ shuffleFour = (arrayMon) => Math.floor(Math.random() * arrayMon.length);
 shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
 
 function loadPokemonNames() {
-    let choice = shuffleMon(userChoice);
+    shuffleMon(userChoice);
     userChoice[0].innerText = currentMon[3].name.toUpperCase();
     userChoice[2].innerText = currentMon[1].name.toUpperCase();
     userChoice[1].innerText = currentMon[0].name.toUpperCase();
     userChoice[3].innerText = currentMon[2].name.toUpperCase();
-    console.log(choice);
 }
 
 // function to check user input
