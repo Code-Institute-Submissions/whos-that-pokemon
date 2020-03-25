@@ -76,6 +76,12 @@ function checkPokemonAnswer() {
             }
             selectedChoice.parentElement.classList.add(classToApply);
             console.log(classToApply);
+
+            setTimeout(() => {
+                selectedChoice.parentElement.classList.remove(classToApply);
+                pushMonToDOM();
+            }, 1000);
+
         });
     });
 }
