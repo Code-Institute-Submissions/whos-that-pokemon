@@ -10,6 +10,7 @@ console.log(userChoice);
 // game score and question setup
 let scoreCounter  = 0;
 let questionCounter = 0;
+const scoreBonus = 100;
 const questionMax = 10;
 
 /*
@@ -42,8 +43,11 @@ function pushMonToDOM() {
   currentMon = [];
   currentMon.push(...pokeData.slice(0, 4));
   matchMon = currentMon[shuffleFour(currentMon)];
+
+  questionCounter++;
+  questionData.innerText = `${questionCounter}/${questionMax}`;
+
   loadPokemonNames();
-  console.log(currentMon);
   displayMonImage();
   checkPokemonAnswer();
 }
@@ -71,9 +75,11 @@ function checkPokemonAnswer() {
             let classToApply;
             if (selectedChoice.innerText.toLowerCase() == matchMon.name) {
                 classToApply = 'rightanswer';
+                incrementScore(scoreBonus);
             } else {
                 classToApply = 'wronganswer';
             }
+            
             selectedChoice.parentElement.classList.add(classToApply);
             console.log(classToApply);
 
@@ -84,6 +90,12 @@ function checkPokemonAnswer() {
 
         });
     });
+}
+
+// increments score if answer is correct
+function incrementScore(num) {
+    scoreCounter += num;
+    scoreData.innerText = scoreCounter;
 }
 
 function displayMonImage() {
