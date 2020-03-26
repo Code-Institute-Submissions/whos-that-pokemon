@@ -44,6 +44,7 @@ Promise.all(promises).then((results) => {
       name: result.name,
       image: result.sprites.front_default
   }));
+  debugger;
   pokeData = shuffleMon(pokemon); // shuffles Pokemon data
   pushMonToDOM(); // pushes Pokemon information to the DOM
   console.log(pokeData);
@@ -91,9 +92,9 @@ function checkPokemonAnswer() {
         answer.addEventListener('click', e => {
             const selectedChoice = e.target;
             let classToApply;
-            if (selectedChoice.innerText.toLowerCase() == matchMon.name) {
+            let correct = selectedChoice.innerText.toLowerCase() == matchMon.name;
+            if (correct) {
                 classToApply = 'rightanswer';
-                incrementScore(scoreBonus);
             } else {
                 classToApply = 'wronganswer';
             }
@@ -111,12 +112,11 @@ function checkPokemonAnswer() {
 }
 
 // increments score if answer is correct
-function incrementScore(num) {
-    scoreCounter += num;
-    scoreData.innerText = scoreCounter;
-}
+// function incrementScore(num) {
+//     scoreCounter += num;
+//     scoreData.innerText = scoreCounter;
+// }
 
 function displayMonImage() {
     pokemon.src = matchMon.image;
 }
-
