@@ -15,6 +15,19 @@ const questionMax = 10;
 
 /*
 **************************
+    Event listeners
+**************************
+*/
+
+$("#start-game").click(function(){
+    $("#landing-page").hide();
+    gameContainer.classList.remove("d-none");
+
+    fetchPokemon();
+  });
+
+/*
+**************************
     Functions
 **************************
 */
@@ -37,8 +50,6 @@ Promise.all(promises).then((results) => {
 });
 };
 
-fetchPokemon();
-
 function pushMonToDOM() {
   currentMon = [];
   currentMon.push(...pokeData.slice(0, 4));
@@ -47,10 +58,8 @@ function pushMonToDOM() {
   questionCounter++;
   questionData.innerText = `${questionCounter}/${questionMax}`;
 
-    generateNewMon();
-    displayMonImage();
-    loadPokemonNames();
-    checkPokemonAnswer();
+  generateNewMon();
+
 }
 
 // shuffle random 4 pokemon in sliced array
@@ -65,6 +74,15 @@ function loadPokemonNames() {
     userChoice[2].innerText = currentMon[1].name.toUpperCase();
     userChoice[1].innerText = currentMon[0].name.toUpperCase();
     userChoice[3].innerText = currentMon[2].name.toUpperCase();
+}
+
+function generateNewMon() {
+    pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
+    console.log(pokeData);
+
+    displayMonImage();
+    loadPokemonNames();
+    checkPokemonAnswer();
 }
 
 // function to check user input
@@ -102,13 +120,3 @@ function displayMonImage() {
     pokemon.src = matchMon.image;
 }
 
-/*
-**************************
-    Event listeners
-**************************
-*/
-
-$("#start-game").click(function(){
-    $("#landing-page").hide();
-    gameContainer.classList.remove("d-none");
-  });
