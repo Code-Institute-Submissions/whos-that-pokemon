@@ -44,7 +44,6 @@ Promise.all(promises).then((results) => {
       name: result.name,
       image: result.sprites.front_default
   }));
-  debugger;
   pokeData = shuffleMon(pokemon); // shuffles Pokemon data
   pushMonToDOM(); // pushes Pokemon information to the DOM
   console.log(pokeData);
@@ -52,6 +51,7 @@ Promise.all(promises).then((results) => {
 };
 
 function pushMonToDOM() {
+  debugger;
   currentMon = [];
   currentMon.push(...pokeData.slice(0, 4));
   matchMon = currentMon[shuffleFour(currentMon)];
@@ -68,6 +68,10 @@ shuffleFour = (arrayMon) => Math.floor(Math.random() * arrayMon.length);
 
 // function to randomly sort pokemon data
 shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
+
+function displayMonImage() {
+    pokemon.src = matchMon.image;
+}
 
 function loadPokemonNames() {
     shuffleMon(userChoice);
@@ -91,21 +95,14 @@ function checkPokemonAnswer() {
     userChoice.forEach(answer => {
         answer.addEventListener('click', e => {
             const selectedChoice = e.target;
-            let classToApply;
             let correct = selectedChoice.innerText.toLowerCase() == matchMon.name;
             if (correct) {
-                classToApply = 'rightanswer';
-            } else {
-                classToApply = 'wronganswer';
-            }
-            
-            selectedChoice.parentElement.classList.add(classToApply);
-            console.log(classToApply);
-
-            setTimeout(() => {
-                selectedChoice.parentElement.classList.remove(classToApply);
+                alert('right answer');
                 pushMonToDOM();
-            }, 1000);
+            } else {
+                alert('wrong answer');
+                pushMonToDOM();
+            }
 
         });
     });
@@ -116,7 +113,3 @@ function checkPokemonAnswer() {
 //     scoreCounter += num;
 //     scoreData.innerText = scoreCounter;
 // }
-
-function displayMonImage() {
-    pokemon.src = matchMon.image;
-}
