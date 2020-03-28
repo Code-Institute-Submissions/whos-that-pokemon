@@ -5,13 +5,13 @@ const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
 const gameContainer = document.getElementById('game-container');
 const pokemon = document.querySelector('#pokeImg img');
-console.log(userChoice);
+let currentMon =[];
 
 // game score and question setup
 let scoreCounter  = 0;
 let questionCounter = 0;
 const scoreBonus = 100;
-const questionMax = 10;
+const questionMax = 5;
 
 /*
 **************************
@@ -31,7 +31,7 @@ $("#start-game").click(function(){
     Functions
 **************************
 */
-
+// with help of James Q Quick video on Pokemon API
 function fetchPokemon() {
   const promises = [];
   for (let i = 1; i <= 150; i++) {
@@ -46,15 +46,16 @@ Promise.all(promises).then((results) => {
   }));
   pokeData = shuffleMon(pokemon); // shuffles Pokemon data
   pushMonToDOM(); // pushes Pokemon information to the DOM
-  console.log(pokeData);
+  console.log('fetching api');
 });
-};
+
+}
 
 function pushMonToDOM() {
-  debugger;
+
   currentMon = [];
   currentMon.push(...pokeData.slice(0, 4));
-  matchMon = currentMon[shuffleFour(currentMon)];
+  console.log('pushing pokemon to DOM');
 
   questionCounter++;
   questionData.innerText = `${questionCounter}/${questionMax}`;
@@ -71,6 +72,7 @@ shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
 
 function displayMonImage() {
     pokemon.src = matchMon.image;
+    console.log('displaying image');
 }
 
 function loadPokemonNames() {
@@ -79,36 +81,46 @@ function loadPokemonNames() {
     userChoice[2].innerText = currentMon[1].name.toUpperCase();
     userChoice[1].innerText = currentMon[0].name.toUpperCase();
     userChoice[3].innerText = currentMon[2].name.toUpperCase();
+    console.log('loading answers to button');
 }
 
 function generateNewMon() {
+    matchMon = currentMon[shuffleFour(currentMon)];
     pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
-    console.log(pokeData);
+    console.log("shuffling through new Pokemon");
 
     displayMonImage();
     loadPokemonNames();
     checkPokemonAnswer();
+
 }
 
 // function to check user input
 function checkPokemonAnswer() {
+    console.log("checking answer")
     userChoice.forEach(answer => {
+        console.log("looping through userChoice")
         answer.addEventListener('click', e => {
             const selectedChoice = e.target;
-            let correct = selectedChoice.innerText.toLowerCase() == matchMon.name;
-            if (correct) {
-                alert('right answer');
+            console.log(selectedChoice)
+            let correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
+            console.log("Answer is " + correctChoice)
+            
+            if(correctChoice){ 
+                swal.fire("Good job!", "You clicked the button!", "success");
                 pushMonToDOM();
             } else {
-                alert('wrong answer');
+                swal.fire("Sorry, wrong answer", "error");
                 pushMonToDOM();
-            }
+                }
 
         });
     });
+    console.log('check done')
 }
 
-// increments score if answer is correct
+
+//increments score if answer is correct
 // function incrementScore(num) {
 //     scoreCounter += num;
 //     scoreData.innerText = scoreCounter;
