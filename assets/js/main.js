@@ -132,17 +132,22 @@ function sweetAlert(correctChoice) {
         position:'center',
         allowEscapeKey: false,
         allowOutsideClick: true,
-        showConfirmButton: true,        
+        showConfirmButton: true,
+        confirmButtonColor: '#344feb'    
     };
 
     if(correctChoice) {
        pokemonAlert.title = 'Correct!';
        pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
+       pokemonAlert.imageUrl = `${matchMon.image}`;
        pokemonAlert.icon = 'success';
+       pokemonAlert.timer = 2000;
     } else {
         pokemonAlert.title = 'Uh oh!';
         pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
+        pokemonAlert.imageUrl = `${matchMon.image}`;
         pokemonAlert.icon = 'error';
+        pokemonAlert.timer = 2000;
     }
     return pokemonAlert;
 }
