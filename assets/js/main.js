@@ -4,7 +4,7 @@ const pokeImage = document.getElementById('pokeImg');
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
 const gameContainer = document.getElementById('game-container');
-const endResult = document.getElementById('end-game');
+const endResult = document.getElementById('end-result');
 const pokemon = document.querySelector('#pokeImg img');
 let currentMon =[];
 
