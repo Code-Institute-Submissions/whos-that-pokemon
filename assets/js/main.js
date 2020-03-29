@@ -1,5 +1,5 @@
 // setting DOM elements and url for fetching
-let userChoice = Array.from(document.getElementsByClassName('poke-name'));
+const userChoice = Array.from(document.getElementsByClassName('poke-name'));
 const pokeImage = document.getElementById('pokeImg');
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
@@ -46,6 +46,7 @@ Promise.all(promises).then((results) => {
   }));
   pokeData = shuffleMon(pokemon); // shuffles Pokemon data
   pushMonToDOM(); // pushes Pokemon information to the DOM
+  console.log(pokeData);
   console.log('fetching api');
 });
 
@@ -54,6 +55,7 @@ Promise.all(promises).then((results) => {
 function pushMonToDOM() {
 
   currentMon = [];
+  console.log(currentMon);
   currentMon.push(...pokeData.slice(0, 4));
   console.log('pushing pokemon to DOM');
 
@@ -87,6 +89,7 @@ function loadPokemonNames() {
 function generateNewMon() {
     matchMon = currentMon[shuffleFour(currentMon)];
     pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
+    console.log(pokeData);
     console.log("shuffling through new Pokemon");
 
     displayMonImage();
@@ -100,25 +103,38 @@ function checkPokemonAnswer() {
     console.log("checking answer")
     userChoice.forEach(answer => {
         console.log("looping through userChoice")
-        answer.addEventListener('click', e => {
-            const selectedChoice = e.target;
+        answer.addEventListener('click', () => {
+            const selectedChoice = event.target;
             console.log(selectedChoice)
             let correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
             console.log("Answer is " + correctChoice)
             
             if(correctChoice){ 
-                swal.fire("Good job!", "You clicked the button!", "success");
-                pushMonToDOM();
-            } else {
-                swal.fire("Sorry, wrong answer", "error");
-                pushMonToDOM();
-                }
+                Swal.fire(sweetAlert(true)).then((result) => {
+                    if (result) {
+                        scoreCounter++;
+                        pushMonToDOM();
+                    }
+                });  
+                        } else Swal.fire(sweetAlert(false)).then((result) => {
+                    if (result) {
+                        pushMonToDOM();
+                    }
+                });
 
         });
     });
     console.log('check done')
 }
 
+function sweetAlert(correctChoice) {
+    const defaultAlert = {
+        position:'center',
+        allowEscapeKey: false,
+        allowOutsideClick: true,
+        showConfirmButton: true,        
+    };
+}
 
 //increments score if answer is correct
 // function incrementScore(num) {
