@@ -34,7 +34,7 @@ $("#start-game").click(function(){
 // with help of James Q Quick video on Pokemon API
 function fetchPokemon() {
   const promises = [];
-  for (let i = 1; i <= 150; i++) {
+  for (let i = 1; i <= 151; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     promises.push(fetch(url).then((res) => res.json()));
 }
@@ -128,12 +128,23 @@ function checkPokemonAnswer() {
 }
 
 function sweetAlert(correctChoice) {
-    const defaultAlert = {
+    const pokemonAlert = {
         position:'center',
         allowEscapeKey: false,
         allowOutsideClick: true,
         showConfirmButton: true,        
     };
+
+    if(correctChoice) {
+       pokemonAlert.title = 'Correct!';
+       pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
+       pokemonAlert.icon = 'success';
+    } else {
+        pokemonAlert.title = 'Uh oh!';
+        pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
+        pokemonAlert.icon = 'error';
+    }
+    return pokemonAlert;
 }
 
 //increments score if answer is correct
