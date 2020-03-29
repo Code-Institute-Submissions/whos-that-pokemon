@@ -37,11 +37,3 @@ body {
 .answer-btn:hover {
      background-color: #c7c7c7;
 }
-
-.rightanswer {
-    background-color: #4eff4e;
-}
-
-.wronganswer {
-    background-color: #ff4e4e;
-}
