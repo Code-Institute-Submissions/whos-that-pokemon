@@ -53,7 +53,10 @@ Promise.all(promises).then((results) => {
 }
 
 function pushMonToDOM() {
-
+  if(questionCounter >= questionMax) {
+      alert('game over');
+  }
+  
   currentMon = [];
   console.log(currentMon);
   currentMon.push(...pokeData.slice(0, 4));
