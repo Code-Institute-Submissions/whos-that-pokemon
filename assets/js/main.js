@@ -4,6 +4,7 @@ const pokeImage = document.getElementById('pokeImg');
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
 const gameContainer = document.getElementById('game-container');
+const endResult = document.getElementById('end-game');
 const pokemon = document.querySelector('#pokeImg img');
 let currentMon =[];
 
@@ -54,8 +55,8 @@ Promise.all(promises).then((results) => {
 
 function pushMonToDOM() {
   if(questionCounter >= questionMax) {
-      alert('game over');
       gameContainer.classList.add("d-none");
+      endResult.classList.remove("d-none");
   }
 
   currentMon = [];
