@@ -112,7 +112,7 @@ function checkPokemonAnswer() {
             if(correctChoice){ 
                 Swal.fire(sweetAlert(true)).then((result) => {
                     if (result) {
-                        scoreCounter++;
+                        incrementScore(scoreBonus);
                         pushMonToDOM();
                     }
                 });  
@@ -137,7 +137,8 @@ function sweetAlert(correctChoice) {
 }
 
 //increments score if answer is correct
-// function incrementScore(num) {
-//     scoreCounter += num;
-//     scoreData.innerText = scoreCounter;
-// }
+function incrementScore(num) {
+    scoreCounter += num;
+    console.log(scoreCounter);
+    scoreData.innerText = scoreCounter;
+}
