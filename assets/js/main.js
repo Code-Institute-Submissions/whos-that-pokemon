@@ -7,6 +7,7 @@ const gameContainer = document.getElementById('game-container');
 const endResult = document.getElementById('end-result');
 const pokemon = document.querySelector('#pokeImg img');
 const finalScore = document.getElementById('final-score');
+const restart = document.getElementById('restart');
 let currentMon =[];
 
 // game score and question setup
@@ -46,6 +47,7 @@ Promise.all(promises).then((results) => {
       name: result.name,
       image: result.sprites.front_default
   }));
+
   pokeData = shuffleMon(pokemon); // shuffles Pokemon data
   pushMonToDOM(); // pushes Pokemon information to the DOM
   console.log(pokeData);
@@ -170,3 +172,15 @@ function gameOver() {
     finalScore.innerText = scoreCounter;
     console.log('calling final score');
 }
+
+function restartGame() {
+    scoreCounter = 0;
+    questionCounter = 0;
+    pushMonToDOM();
+}
+
+restart.addEventListener('click', () => {
+    scoreCounter = 0;
+    questionCounter = 0;
+    pushMonToDOM();
+});
