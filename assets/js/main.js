@@ -6,6 +6,7 @@ const scoreData = document.getElementById('scoreCount');
 const gameContainer = document.getElementById('game-container');
 const endResult = document.getElementById('end-result');
 const pokemon = document.querySelector('#pokeImg img');
+const finalScore = document.getElementById('final-score');
 let currentMon =[];
 
 // game score and question setup
@@ -57,6 +58,7 @@ function pushMonToDOM() {
   if(questionCounter >= questionMax) {
       gameContainer.classList.add("d-none");
       endResult.classList.remove("d-none");
+      gameOver();
   }
 
   currentMon = [];
@@ -162,4 +164,9 @@ function incrementScore(num) {
     scoreCounter += num;
     console.log(scoreCounter);
     scoreData.innerText = scoreCounter;
+}
+
+function gameOver() {
+    finalScore.innerText = scoreCounter;
+    console.log('calling final score');
 }
