@@ -38,3 +38,11 @@ body {
 .answer-btn:hover {
      background-color: #c7c7c7;
 }
+
+.your-score, .final-score {
+    color: #ffffff;
+}
+
+.your-score {
+    font-size: 2em;
+}
