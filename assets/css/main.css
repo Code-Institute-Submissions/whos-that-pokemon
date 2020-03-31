@@ -18,6 +18,13 @@ body {
     margin: auto;
 }
 
+/* https://stackoverflow.com/questions/42535432/colored-silhouette-using-css */
+.silhouette {
+    -webkit-filter: grayscale(100%) brightness(0);
+    filter: grayscale(100%) brightness(0);
+    opacity: 1;
+}
+
 .answer-container {
     border: 5px double #2b2b2b;
 }
