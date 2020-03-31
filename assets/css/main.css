@@ -9,6 +9,11 @@ body {
     font-size: 6em;
 }
 
+.about-game {
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
 .sprite-container {
     height: 250px;
     width: 250px;
