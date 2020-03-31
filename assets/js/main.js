@@ -14,7 +14,7 @@ let currentMon =[];
 let scoreCounter  = 0;
 let questionCounter = 0;
 const scoreBonus = 100;
-const questionMax = 5;
+const questionMax = 4;
 
 /*
 **************************
