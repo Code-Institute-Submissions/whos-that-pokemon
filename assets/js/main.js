@@ -8,13 +8,14 @@ const endResult = document.getElementById('end-result');
 const pokemon = document.querySelector('#pokeImg img');
 const finalScore = document.getElementById('final-score');
 const restart = document.getElementById('restart');
+const scoreReview = document.getElementById('score-review');
 let currentMon =[];
 
 // game score and question setup
 let scoreCounter  = 0;
 let questionCounter = 0;
 const scoreBonus = 100;
-const questionMax = 4;
+const questionMax = 12;
 
 /*
 **************************
@@ -173,12 +174,29 @@ function gameOver() {
     console.log('calling final score');
 
     if (scoreCounter <= 500) {
-        alert('oh dear, you need to brush up on your Pokémon knowledge. Go to the counter to pick up ...');
-    } else if (scoreCounter > 500 && coreCounter < 1000) {
-        alert('Not bad, but you brush up your Pokémon knowledge and try again. Go to the counter to pick up ...');
+        scoreReview.innerHTML = `
+        <h2>Try again!<h2>
+        <p>Want to try again? Click the restart button below!<p>`;
+    } else if (scoreCounter > 500 && scoreCounter < 1000) {
+        scoreReview.innerHTML = `
+        <h2>Not bad!<h2>
+        <p>Your knowledge of Pokémon isn't bad, want to try again?</p>
+        <p>For your efforts, have a sticker on us! Got to the prize counter to claim using this user ID:</p>
+        <p>#123456</p>`;
     }
-    else if (scoreCounter > 1000 && coreCounter < 1500) {
-        alert('Not bad, but you brush up your Pokémon knowledge and try again. Go to the counter to pick up ...');
+    else if (scoreCounter > 1000 && scoreCounter < 1500) {
+        scoreReview.innerHTML = `
+        <h2>Well done!<h2>
+        <p>You know your Bulbasaur from your Pikachu! Be sure to claim your plushie from the prize counter using the ID:</p>
+         <p>#273856</p>`;
+    } else if (scoreCounter > 1500 && scoreCounter <= 2000) {
+        scoreReview.innerHTML = `
+        <h2>Fantastic!<h2>
+        <p>You're like a walking, talking Pokédex! Don't forget to claim your top secret exclusive prize from the prize counter using the below ID:</p>
+         <p>#973836</p>`;
+    } else {
+        scoreReview.innerHTML = `
+        <h2>Error loading score, please try again or contact support<h2>`
     }
 
 }
