@@ -7,9 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
 	<link rel="stylesheet" href="assets/css/main.css">
-    <link rel="shortcut icon" href="/assets/img/who-thumbnail.jpg" />
+	<link rel="shortcut icon" href="/assets/img/who-thumbnail.jpg" />
 	<title>Who's that Pokémon?</title>
 </head>
 
@@ -21,89 +21,101 @@
 				<div class="col-12 text-center">
 					<img src="assets/img/wtp-logo.png" class="img-fluid">
 				</div>
+				</div>
 			</div>
-		</div>
 	</header>
 
-    <section class="landing-page" id="landing-page">
-    <div class="container">
+	<section class="landing-page" id="landing-page">
+		<div class="container">
 			<div class="row pt-3">
 				<div class="col-12 text-center">
-                    <h1 class="text-white">Welcome!</h1>
+					<h1 class="text-white">Welcome!</h1>
 				</div>
-		    </div>
-            <div class="row pt-3">
+			</div>
+			<div class="row pt-3">
 				<div class="col-12 about-game">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+						the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+						of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+						but also the leap into electronic typesetting, remaining essentially unchanged. It was
+						popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+						and more recently with desktop publishing software like Aldus PageMaker including versions of
+						Lorem Ipsum.</p>
 				</div>
-		    </div>
-            <div class="row pt-3">
+			</div>
+			<div class="row pt-3">
 				<div class="col-12 text-center">
-                    <button class="start-game-btn" id="start-game"><span>Press play to start</span></button>
+					<button class="start-game-btn" id="start-game"><span>Press play to start</span></button>
 				</div>
-		    </div>
-    </div>
-    </section>
+			</div>
+		</div>
+	</section>
 
 	<!-- main game section -->
 	<section class="container d-none" id="game-container">
 		<div class="row">
 			<div class="col-md-6 text-center question-col">
 				<h3 class="ml-auto">Question:</h3>
-                <span id="questionCount"></span>
+				<span id="questionCount"></span>
 			</div>
 			<div class="col-md-6 text-center score-col">
 				<h3 class="mr-auto">Score:</h3>
-                <span id="scoreCount"></span>
+				<span id="scoreCount"></span>
 			</div>
 		</div>
 		<!-- row containing pokémon sprites generated from API -->
 		<div class="row pb-3">
 			<div class="col-12 text-center">
 				<div class="sprite-container" id="pokeImg">
-                    <div class="silhouette">
-                        <img src=" " draggable="false" width="200" height="200" class="img-fluid" alt="image of pokemon">
+					<div class="silhouette">
+						<img src=" " draggable="false" width="200" height="200" class="img-fluid" alt="image of pokemon">
                     </div>
-                </div>
-                <div class="question pt-3"><h3>Can you guess the Pokémon?</h3></div>
+					</div>
+					<div class="question pt-3">
+						<h3>Can you guess the Pokémon?</h3>
+					</div>
+				</div>
 			</div>
-		</div>
-		<!-- row containing answers -->
-        <div class="container answer-container">
-            <div class="row d-flex justify-content-center">
-                <a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 1</a>
-                <a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 2</a>
-            </div>
-	        <div class="row d-flex justify-content-center">
-				<a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 3</a>
-				<a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 4</a>
-		    </div>
-        </div>
+			<!-- row containing answers -->
+			<div class="container answer-container">
+				<div class="row d-flex justify-content-center">
+					<a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 1</a>
+					<a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 2</a>
+				</div>
+				<div class="row d-flex justify-content-center">
+					<a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 3</a>
+					<a class="col-sm-12 col-md-3 btn answer-btn poke-name">Answer 4</a>
+				</div>
+			</div>
 
-        <div class="row controls-container justify-content-md-center">
-			<div class="col-12 text-center btn-container">
-				<a class="btn" id="info"><i class="fas fa-info"></i></a>
-                <a class="btn" id="help"><i class="fas fa-question"></i></a>
-				<a class="btn" id="restart"><i class="fas fa-undo"></i></a>
+	</section>
+
+	<section class="container d-none" id="end-result">
+		<div class="row pt-3">
+			<div class="col text-center">
+				<div class="your-score" id="end-score">
+					<h3>Your score:</h3>
+					<span id="final-score"></span>
+					<div id="score-review"></div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-    <section class="container d-none" id="end-result">
-        <div class="row pt-3">
-            <div class="col text-center">
-                <div class="your-score" id="end-score"><h3>Your score:</h3>
-                <span id="final-score"></span>
-                <div id="score-review"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="container d-none" id="controls">
+			<div class="row justify-content-md-center">
+				<div class="col-12 text-center btn-container">
+					<a class="btn" id="info"><i class="fas fa-info"></i></a>
+					<a class="btn" id="help"><i class="fas fa-question"></i></a>
+					<a class="btn" id="restart"><i class="fas fa-undo"></i></a>
+				</div>
+			</div>
+	</section>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 
