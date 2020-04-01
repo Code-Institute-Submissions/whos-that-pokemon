@@ -64,3 +64,12 @@ body {
 .your-score {
     font-size: 2em;
 }
+
+#help, #info, #restart {
+    margin: 10px;
+    background-color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 30px;
+}
