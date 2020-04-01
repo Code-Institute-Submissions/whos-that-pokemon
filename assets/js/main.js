@@ -15,7 +15,7 @@ let currentMon =[];
 let scoreCounter  = 0;
 let questionCounter = 0;
 const scoreBonus = 100;
-const questionMax = 12;
+const questionMax = 2;
 
 /*
 **************************
@@ -175,25 +175,25 @@ function gameOver() {
 
     if (scoreCounter <= 500) {
         scoreReview.innerHTML = `
-        <h2>Try again!<h2>
-        <p>Want to try again? Click the restart button below!<p>`;
+        <h2 class="pt-4">Oh no...<h2>
+        <p class="pt-4">You flopped like a Magikarp. Want to try again? Click the restart button below!<p>`;
     } else if (scoreCounter > 500 && scoreCounter < 1000) {
         scoreReview.innerHTML = `
-        <h2>Not bad!<h2>
-        <p>Your knowledge of Pokémon isn't bad, want to try again?</p>
-        <p>For your efforts, have a sticker on us! Got to the prize counter to claim using this user ID:</p>
+        <h2 class="pt-4">Not bad!<h2>
+        <p class="pt-4">Your knowledge of Pokémon isn't bad, want to try again?</p>
+        <p class="pt-4">For your efforts, have a vinyl sticker on us! Got to the prize counter to claim using this user ID:</p>
         <p>#123456</p>`;
     }
     else if (scoreCounter > 1000 && scoreCounter < 1500) {
         scoreReview.innerHTML = `
-        <h2>Well done!<h2>
-        <p>You know your Bulbasaur from your Pikachu! Be sure to claim your plushie from the prize counter using the ID:</p>
-         <p>#273856</p>`;
+        <h2 class="pt-4">Well done!<h2>
+        <p class="pt-4">You know your Bulbasaur from your Pikachu! Be sure to claim your plushie from the prize counter using the ID:</p>
+         <p class="pt-4">#273856</p>`;
     } else if (scoreCounter > 1500 && scoreCounter <= 2000) {
         scoreReview.innerHTML = `
-        <h2>Fantastic!<h2>
-        <p>You're like a walking, talking Pokédex! Don't forget to claim your top secret exclusive prize from the prize counter using the below ID:</p>
-         <p>#973836</p>`;
+        <h2 class="pt-4">Fantastic!<h2>
+        <p class="pt-4">You're like a walking, talking Pokédex! Don't forget to claim your top secret exclusive prize from the prize counter using the below ID:</p>
+        <p class="pt-4">#973836</p>`;
     } else {
         scoreReview.innerHTML = `
         <h2>Error loading score, please try again or contact support<h2>`
