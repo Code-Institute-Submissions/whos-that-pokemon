@@ -171,6 +171,16 @@ function incrementScore(num) {
 function gameOver() {
     finalScore.innerText = scoreCounter;
     console.log('calling final score');
+
+    if (scoreCounter <= 500) {
+        alert('oh dear, you need to brush up on your Pokémon knowledge. Go to the counter to pick up ...');
+    } else if (scoreCounter > 500 && coreCounter < 1000) {
+        alert('Not bad, but you brush up your Pokémon knowledge and try again. Go to the counter to pick up ...');
+    }
+    else if (scoreCounter > 1000 && coreCounter < 1500) {
+        alert('Not bad, but you brush up your Pokémon knowledge and try again. Go to the counter to pick up ...');
+    }
+
 }
 
 function restartGame() {
