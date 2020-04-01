@@ -9,6 +9,7 @@ const pokemon = document.querySelector('#pokeImg img');
 const finalScore = document.getElementById('final-score');
 const restart = document.getElementById('restart');
 const scoreReview = document.getElementById('score-review');
+const controls = document.getElementById('controls');
 let currentMon =[];
 
 // game score and question setup
@@ -26,6 +27,7 @@ const questionMax = 2;
 $("#start-game").click(function(){
     $("#landing-page").hide();
     gameContainer.classList.remove("d-none");
+    controls.classList.remove("d-none");
 
     fetchPokemon();
   });
