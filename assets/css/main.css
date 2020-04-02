@@ -57,6 +57,14 @@ body {
      background-color: #c7c7c7;
 }
 
+/*https://stackoverflow.com/questions/18153234/center-a-column-using-twitter-bootstrap-3 */
+.col-center-block {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    /* margin-left: auto; margin-right: auto; */
+}
+
 .your-score, .final-score {
     color: #ffffff;
 }
