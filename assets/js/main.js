@@ -15,8 +15,8 @@ let currentMon = [];
 // game score and question setup
 let scoreCounter = 0;
 let questionCounter = 0;
-const scoreBonus = 100;
-const questionMax = 3;
+let scoreBonus = 100;
+const questionMax = 15;
 
 /*
 **************************
@@ -28,7 +28,6 @@ $("#start-game").click(function () {
     $("#landing-page").hide();
     gameContainer.classList.remove("d-none");
     controls.classList.remove("d-none");
-
     fetchPokemon();
 });
 
@@ -47,7 +46,6 @@ const fetchPokemon = async () => {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
             1}.png`,
     }));
-
     pokeData = shuffleMon(pokemon);
     pushMonToDOM();
     console.log(pokeData);
@@ -67,6 +65,7 @@ function pushMonToDOM() {
 
     questionCounter++;
     questionData.innerText = `${questionCounter}/${questionMax}`;
+    scoreData.innerText = `${scoreCounter}`;
 
     generateNewMon();
 
@@ -180,12 +179,12 @@ function gameOver() {
         <p class="pt-4">For your efforts, have a vinyl sticker on us! Got to the prize counter to claim using this user ID:</p>
         <p>#123456</p>`;
     }
-    else if (scoreCounter > 1000 && scoreCounter < 1500) {
+    else if (scoreCounter >= 1000 && scoreCounter < 1500) {
         scoreReview.innerHTML = `
         <h2 class="pt-4">Well done!<h2>
         <p class="pt-4">You know your Bulbasaur from your Pikachu! Be sure to claim your plushie from the prize counter using the ID:</p>
          <p class="pt-4">#273856</p>`;
-    } else if (scoreCounter > 1500 && scoreCounter <= 2000) {
+    } else if (scoreCounter >= 1500 && scoreCounter <= 2000) {
         scoreReview.innerHTML = `
         <h2 class="pt-4">Fantastic!<h2>
         <p class="pt-4">You're like a walking, talking Pokédex! Don't forget to claim your top secret exclusive prize from the prize counter using the below ID:</p>
