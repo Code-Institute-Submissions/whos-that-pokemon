@@ -78,7 +78,7 @@ body {
     font-size: 2em;
 }
 
-#help, #info, #restart {
+#help, #restart {
     margin: 10px;
     background-color: #ffffff;
     width: 60px;
