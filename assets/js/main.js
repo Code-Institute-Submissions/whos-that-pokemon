@@ -16,7 +16,7 @@ let currentMon =[];
 let scoreCounter  = 0;
 let questionCounter = 0;
 const scoreBonus = 100;
-const questionMax = 2;
+const questionMax = 3;
 
 /*
 **************************
@@ -205,12 +205,14 @@ function gameOver() {
 
 function restartGame() {
     scoreCounter = 0;
+    console.log('score on restart is ' + scoreCounter);
     questionCounter = 0;
+    gameContainer.classList.remove("d-none");
+    endResult.classList.add("d-none");
     pushMonToDOM();
 }
 
-restart.addEventListener('click', () => {
-    scoreCounter = 0;
-    questionCounter = 0;
-    pushMonToDOM();
+// restart button
+$('#restart').click(function() {
+    restartGame();
 });
