@@ -42,6 +42,8 @@ There are two fonts being used in this app. The default font is Open Sans and is
 #### Colours
 The primary colour choice is red and white, similar to the Pokémon brand. This was chosen for its friendly, approachable and slightly nostalgic feel for fans of the franchise.
 
+![https://res.cloudinary.com/orla2020/image/upload/v1585951422/milestone-two/colour-palette_cqbfvl.png](https://res.cloudinary.com/orla2020/image/upload/v1585951422/milestone-two/colour-palette_cqbfvl.png)
+
 ---
 ## Features
 
@@ -88,6 +90,30 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 ### Other
 - Github - Used for remote storage of my project.
 - Git - Used for version control.
+---
+
+## Testing
+
+### Validators used
+
+#### [W3C HTML Validator](https://validator.w3.org/)
+
+- No errors or warnings found.
+
+#### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+- No errors, 2 warnings found.
+  * "Imported style sheets are not checked in direct input and file upload modes" - This was in reference to the imported Google Fonts into my CSS stylesheet. I removed the @import from CSS and swapped with embed link to my head tag in HTML.
+  * "-webkit-filter is an unknown vendor extension" - This was in reference to the webkit-filter vendor extension used in the silhouette class. This was removed.
+
+#### [CSS Lint](http://csslint.net/index.html)
+
+- No errors, 7 warnings found.
+  * "Beware of broken box size. Using width/height with border can sometimes make elements larger than you expect " - This was in reference to the box model and sizing. I added 'box-sizing: border-box' to my buttons as it allowed me to take padding and border into my box-size. Doing this threw up 3 new errors (outlined in next bullet point)
+  * "Disallow use of box-sizing	The box-sizing property isn't supported in IE6 and IE7." I ignored this as IE6 and IE7 are no longer supported.
+  * "Disallow IDs in selectors. Don't use IDs in selectors" - This refered to the use of an ID selector to style a button. I swapped the ID for a class for best practice.
+
+
 ---
 
 ## Credits
