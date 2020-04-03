@@ -9,6 +9,20 @@ As part of the event, the organisers wanted a fun quiz app created that would en
 
 ## UX
 
+#### Project Goals
+
+The primary goal of the quiz is to provide a clean, intuitive and fun game to entertain and delight it's users. 
+
+#### User Stories
+
+1.	As a user I want to play something fun to challenge my Pokémon knowledge.
+2.	As a user I want to pass the time at the convention with a fun game.
+3.	As a user I want large, easy to press buttons, so that I can press them on my mobile.
+4.	As a user I want feedback on whether my answer is correct or not.
+5.	As a user I want to know what my score is after each question.
+6.	As a user I want to restart the game so I can try improve my score.
+
+
 #### Wireframes
 
 I used Adobe Illustrator to complete my wireframes as part of the design and planning process for this project. I made minor changes throughout the development stage so my website looks slightly different than the wireframes, but the core concept is still there.
