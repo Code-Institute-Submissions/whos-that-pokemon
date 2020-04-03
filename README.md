@@ -23,7 +23,7 @@ The primary goal of the quiz is to provide a clean, intuitive and fun game to en
 6.	As a user I want to restart the game so I can try improve my score.
 
 
-#### Wireframes
+### Wireframes
 
 I used Adobe Illustrator to complete my wireframes as part of the design and planning process for this project. I made minor changes throughout the development stage so my website looks slightly different than the wireframes, but the core concept is still there.
 
@@ -32,9 +32,15 @@ Main quiz
 - [Tablet](https://github.com/orlamadden/whos-that-pokemon/blob/master/wireframes/wireframes-tablet.jpg)
 - [Desktop](https://github.com/orlamadden/whos-that-pokemon/blob/master/wireframes/wireframes-desktop.jpg)
 
-#### Surface
+### Design Choices
 
-I wanted to capture the theme of the Pokémon franchise and the essence of the retro Pokémon games for this app. The typography was also inspired by the retro Pokémon games. The colour choice and typography add a friendly, approachable and slightly nostalgic feel to the app.
+I wanted to capture the theme of the Pokémon franchise and the essence of the retro Pokémon games for this app. The following design choices were made with this requirement:
+
+#### Font
+There are two fonts being used in this app. The default font is Open Sans and is used for most of the content copy. The second choice is VT323, which is a monospace font capturing the typography in the retro Pokémon games. This font is used in the main quiz container.
+
+#### Colours
+The primary colour choice is red and white, similar to the Pokémon brand. This was chosen for its friendly, approachable and slightly nostalgic feel for fans of the franchise.
 
 ---
 ## Features
@@ -48,7 +54,7 @@ I wanted to capture the theme of the Pokémon franchise and the essence of the r
 
 ## Technology
 
-#### Frontend Technologies used
+### Frontend Technologies used
 - HTML - For building the foundation of my app. 
 - CSS - For custom styles on my app.
 - Bootstrap - The framework behind my app's structure and layout, prioritising mobile first design.
@@ -57,7 +63,7 @@ I wanted to capture the theme of the Pokémon franchise and the essence of the r
 - SweetAlert2 - Used to show feedback after the user selects an answer.
 
 
-#### Other
+### Other
 - Github - Used for remote storage of my project.
 - Git - Used for version control.
 ---
