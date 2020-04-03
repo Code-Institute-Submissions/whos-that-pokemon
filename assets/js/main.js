@@ -10,10 +10,10 @@ const finalScore = document.getElementById('final-score');
 const restart = document.getElementById('restart');
 const scoreReview = document.getElementById('score-review');
 const controls = document.getElementById('controls');
-let currentMon =[];
+let currentMon = [];
 
 // game score and question setup
-let scoreCounter  = 0;
+let scoreCounter = 0;
 let questionCounter = 0;
 const scoreBonus = 100;
 const questionMax = 3;
@@ -24,13 +24,13 @@ const questionMax = 3;
 **************************
 */
 
-$("#start-game").click(function(){
+$("#start-game").click(function () {
     $("#landing-page").hide();
     gameContainer.classList.remove("d-none");
     controls.classList.remove("d-none");
 
     fetchPokemon();
-  });
+});
 
 /*
 **************************
@@ -39,37 +39,36 @@ $("#start-game").click(function(){
 */
 // with help of James Q Quick video on Pokemon API
 const fetchPokemon = async () => {
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
-  const res = await fetch(url);
-  const data = await res.json();
-  const pokemon = data.results.map((data, index) => ({
-    name: data.name,
-    id: index + 1,
-    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
-      1}.png`,
-  }));
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const pokemon = data.results.map((data, index) => ({
+        name: data.name,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
+            1}.png`,
+    }));
 
-  pokeData = shuffleMon(pokemon);
-  pushMonToDOM();
-  console.log(pokeData);
+    pokeData = shuffleMon(pokemon);
+    pushMonToDOM();
+    console.log(pokeData);
 };
 
 function pushMonToDOM() {
-  if(questionCounter >= questionMax) {
-      gameContainer.classList.add("d-none");
-      endResult.classList.remove("d-none");
-      gameOver();
-  }
+    if (questionCounter >= questionMax) {
+        gameContainer.classList.add("d-none");
+        endResult.classList.remove("d-none");
+        gameOver();
+    }
 
-  currentMon = [];
-  console.log(currentMon);
-  currentMon.push(...pokeData.slice(0, 4));
-  console.log('pushing pokemon to DOM');
+    currentMon = [];
+    console.log(currentMon);
+    currentMon.push(...pokeData.slice(0, 4));
+    console.log('pushing pokemon to DOM');
 
-  questionCounter++;
-  questionData.innerText = `${questionCounter}/${questionMax}`;
+    questionCounter++;
+    questionData.innerText = `${questionCounter}/${questionMax}`;
 
-  generateNewMon();
+    generateNewMon();
 
 }
 
@@ -115,40 +114,40 @@ function checkPokemonAnswer() {
             console.log(selectedChoice)
             let correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
             console.log("Answer is " + correctChoice)
-            
-            if(correctChoice){ 
-                Swal.fire(sweetAlert(true)).then((result) => {
+
+            if (correctChoice) {
+                Swal.fire(answerAlert(true)).then((result) => {
                     if (result) {
                         incrementScore(scoreBonus);
                         pushMonToDOM();
                     }
-                });  
-                        } else Swal.fire(sweetAlert(false)).then((result) => {
-                    if (result) {
-                        pushMonToDOM();
-                    }
                 });
+            } else Swal.fire(answerAlert(false)).then((result) => {
+                if (result) {
+                    pushMonToDOM();
+                }
+            });
 
         });
     });
     console.log('check done')
 }
 
-function sweetAlert(correctChoice) {
+function answerAlert(correctChoice) {
     const pokemonAlert = {
-        position:'center',
+        position: 'center',
         allowEscapeKey: false,
         allowOutsideClick: true,
         showConfirmButton: true,
-        confirmButtonColor: '#344feb'    
+        confirmButtonColor: '#344feb'
     };
 
-    if(correctChoice) {
-       pokemonAlert.title = 'Correct!';
-       pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
-       pokemonAlert.imageUrl = `${matchMon.image}`;
-       pokemonAlert.icon = 'success';
-       pokemonAlert.timer = 2000;
+    if (correctChoice) {
+        pokemonAlert.title = 'Correct!';
+        pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
+        pokemonAlert.imageUrl = `${matchMon.image}`;
+        pokemonAlert.icon = 'success';
+        pokemonAlert.timer = 2000;
     } else {
         pokemonAlert.title = 'Uh oh!';
         pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
@@ -208,6 +207,6 @@ function restartGame() {
 }
 
 // restart button
-$('#restart').click(function() {
+$('#restart').click(function () {
     restartGame();
 });
