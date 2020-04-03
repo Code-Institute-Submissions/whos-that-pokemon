@@ -11,12 +11,12 @@ As part of the event, the organisers wanted a fun quiz app created that would en
 
 #### Wireframes
 
-I used Adobe Illustrator to complete my wireframes. I made minor changes throughout the development stage so my website looks slightly different than the wireframes, but the core concept is still there.
+I used Adobe Illustrator to complete my wireframes as part of the design and planning process for this project. I made minor changes throughout the development stage so my website looks slightly different than the wireframes, but the core concept is still there.
 
 Main quiz
-- Mobile
-- Tablet
-- Desktop
+- [Mobile](https://github.com/orlamadden/whos-that-pokemon/blob/master/wireframes/wireframes-mobile.jpg)
+- [Tablet](https://github.com/orlamadden/whos-that-pokemon/blob/master/wireframes/wireframes-tablet.jpg)
+- [Desktop](https://github.com/orlamadden/whos-that-pokemon/blob/master/wireframes/wireframes-desktop.jpg)
 
 #### Surface
 
