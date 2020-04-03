@@ -4,6 +4,11 @@ body {
     background-color: rgb(211, 37, 37);
 }
 
+.main-section {
+    margin-top: 3.8em;
+    min-height: 70vh;
+}
+
 .about-game {
     color: #ffffff;
     font-size: 1.4em;
@@ -80,4 +85,9 @@ body {
     height: 60px;
     border-radius: 50px;
     font-size: 30px;
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 20px;
 }
