@@ -45,9 +45,31 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 ---
 ## Features
 
-1.	Game Dashboard - The game dashboard contains the question count, score, Pokémon silhouette, 4 answer choice buttons, info, help and reset buttons.
+#### Game Dashboard
+- The game dashboard contains the question count, score, Pokémon silhouette, 4 answer choice buttons, info, help and reset buttons.
+#### Reset Button
+- The reset button, represented by a curved arrow icon from FontAwesome, resets the game. When the user presses the reset button, the question count returns to 1 and the score returns to 0.
+#### Score Counter
+- Score section displaying the user’s score. The score increments by 100 points if the user gets the answer correct.
+#### Question Counter
+- The question section displays the current question number. It also displays the maximum question count; in this game’s case it is 20 questions.
+#### Pokémon API
+- The main feature of this game is the Pokémon API. For the purpose of this game, the limit of Pokémon is 150.
+#### Image container
+- The image container is where the image sprite from the Pokémon API is displayed. There is a colour filter on the image making it a dark silhouette. The user needs to guess the silhouette to gain points.
+#### Answers container
+- The answers container is split into 4 buttons. Inside each of the buttons is the Pokémon names generated from the Pokémon API. One of these answers matches the image sprite highlighted in feature #6.
+#### Sweet Alert modal
+- This game uses the Sweet Alert pop up box that is triggered after user input. It alerts the user if they got an answer right or wrong. It displays the correct unfiltered image sprite and text containing the correct Pokémon’s name.
+#### End game container
+- Once the maximum number of questions is reached, the end game container will display the user’s final score and some feedback depending on the user score scenario.
 
-2.	Reset Button - The reset button, represented by a curved arrow icon from FontAwesome, resets the game. When the user presses the reset button, the question count returns to 1 and the score returns to 0.
+### Recommendations for future implementation
+
+#### Other modes
+- I would like to add other modes that include other Pokémon generations for more of a challenge. For example, easy mode would be 150 Pokémon (Generation 1), medium mode would have 386 (Generation 1 – 3), hard mode would have 721 (Generation 1 – 6) and Pokémon master mode would have all 894 (Generation 1 – 8).
+#### Pokédex
+- A separate section to display all 150 Pokémon would be a ‘nice to have’ feature, which would display Pokémon names, sprites, type and number. 
 
 
 ---
