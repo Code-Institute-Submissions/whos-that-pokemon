@@ -37,6 +37,14 @@ Main quiz
 I wanted to capture the theme of the Pokémon franchise and the essence of the retro Pokémon games for this app. The typography was also inspired by the retro Pokémon games. The colour choice and typography add a friendly, approachable and slightly nostalgic feel to the app.
 
 ---
+## Features
+
+1.	Game Dashboard - The game dashboard contains the question count, score, Pokémon silhouette, 4 answer choice buttons, info, help and reset buttons.
+
+2.	Reset Button - The reset button, represented by a curved arrow icon from FontAwesome, resets the game. When the user presses the reset button, the question count returns to 1 and the score returns to 0.
+
+
+---
 
 ## Technology
 
