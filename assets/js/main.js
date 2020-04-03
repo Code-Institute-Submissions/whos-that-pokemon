@@ -38,26 +38,21 @@ $("#start-game").click(function(){
 **************************
 */
 // with help of James Q Quick video on Pokemon API
-function fetchPokemon() {
-  const promises = [];
-  for (let i = 1; i <= 151; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    promises.push(fetch(url).then((res) => res.json()));
-}
-
-Promise.all(promises).then((results) => {
-  const pokemon = results.map((result) => ({
-      name: result.name,
-      image: result.sprites.front_default
+const fetchPokemon = async () => {
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
+  const res = await fetch(url);
+  const data = await res.json();
+  const pokemon = data.results.map((data, index) => ({
+    name: data.name,
+    id: index + 1,
+    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
+      1}.png`,
   }));
 
-  pokeData = shuffleMon(pokemon); // shuffles Pokemon data
-  pushMonToDOM(); // pushes Pokemon information to the DOM
+  pokeData = shuffleMon(pokemon);
+  pushMonToDOM();
   console.log(pokeData);
-  console.log('fetching api');
-});
-
-}
+};
 
 function pushMonToDOM() {
   if(questionCounter >= questionMax) {
@@ -209,7 +204,7 @@ function restartGame() {
     questionCounter = 0;
     gameContainer.classList.remove("d-none");
     endResult.classList.add("d-none");
-    pushMonToDOM();
+    fetchPokemon();
 }
 
 // restart button
