@@ -116,6 +116,26 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 
 ---
 
+## Deployment
+
+This project was developed using the GitPod IDE, committed to git and pushed to GitHub. 
+
+### Publishing to GitHub Pages
+
+To deploy my website to GitHub Pages, the following steps were taken:
+
+1. Log into GitHub.
+2. Selected my repository from the GitHub dashboard.
+3. Selected **Settings** at the top of the chosen repository.
+4. Scroll down to **GitHub Pages** section.
+5. Under **Source** click the drop-down menu and select a source to be published, in this case it was **Master Branch**.
+6. Once selected, the page was published immediately, and a link to the deployed website was presented.
+7. The link to the deployed website can be accessed at the very beginning of this document.
+
+### Running the code locally
+
+---
+
 ## Credits
 
 ### Content
