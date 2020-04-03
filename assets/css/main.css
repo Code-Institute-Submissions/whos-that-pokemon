@@ -51,7 +51,7 @@ body {
 .answer-btn {
     margin: 10px;
     height: 70px;
-    width: 200px;
+    width: 100%;
     font-family: 'VT323', monospace;
     font-size: 1.8em;
     background-color: #ffffff;

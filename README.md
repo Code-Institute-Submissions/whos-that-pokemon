@@ -11,7 +11,7 @@ As part of the event, the organisers wanted a fun quiz app created that would en
 
 #### Project Goals
 
-The primary goal of the quiz is to provide a clean, intuitive and fun game to entertain and delight it's users. 
+The primary goal of the quiz is to provide a clean, intuitive and fun game to entertain and delight it's users. It uses data from the Pokémon API to display a silhouette of a random Pokémon and 4 choices for the user to choose from.
 
 #### User Stories
 
