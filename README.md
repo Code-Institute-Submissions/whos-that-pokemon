@@ -89,4 +89,27 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 - Github - Used for remote storage of my project.
 - Git - Used for version control.
 ---
+
+## Credits
+
+### Content
+All text in the project was written by myself, apart from the generated names of the Pokémon which came from the API.
+
+### Media
+
+- The main logo and favicon was created by me using Photoshop. The font used for the logo and the favicon was obtained from [Dafont](https://www.dafont.com/pokemon.font?text=Who%27s+That+Pok%E9mon%3F)
+- API source data from the [Pokémon API](https://pokeapi.co/)
+
+### Code
+
+- The design for the buttons was inspired by the following [Code Pen](https://codepen.io/tiffachoo/pen/aKKZrB) by Tiffany Choong
+
+### Acknowledgements
+
+Many thanks to:
+- Code Institute Tutor Anna for opening my eyes to the wonderful debugger tool in DevTools
+- Code Institute Tutor Samantha for helping me narrow down where a particular issue was in one of my functions
+
+---
+
 For educational purposes only.
