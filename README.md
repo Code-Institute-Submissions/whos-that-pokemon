@@ -124,22 +124,22 @@ This project was developed using the GitPod IDE, committed to git and pushed to 
 
 To deploy my website to GitHub Pages, the following steps were taken:
 
-1. Log into GitHub.
+1. Logged into **GitHub**.
 2. Selected my repository from the GitHub dashboard.
 3. Selected **Settings** at the top of the chosen repository.
-4. Scroll down to **GitHub Pages** section.
-5. Under **Source** click the drop-down menu and select a source to be published, in this case it was **Master Branch**.
+4. Scrolled down to **GitHub Pages** section.
+5. Under **Source** clicked the drop-down menu and select a source to be published, in this case it was **Master Branch**.
 6. Once selected, the page was published immediately, and a link to the deployed website was presented.
 7. The link to the deployed website can be accessed at the very beginning of this document.
 
 ### Running the code locally
 
 This project can be ran locally using the following steps:
-1. Go to the Repository link at the top of this document and click on the 'Clone or Download' button and copy the link provided.
+1. Go to the Repository link at the top of this document and click on the **Clone or Download** button and copy the link provided.
 
 ![https://res.cloudinary.com/orla2020/image/upload/v1586003823/milestone-two/clone-repository_foxhob.png](https://res.cloudinary.com/orla2020/image/upload/v1586003823/milestone-two/clone-repository_foxhob.png)
 
-2. In your IDE of choice, e.g. Gitpod or VSCode, open the Terminal. 
+2. In your IDE of choice, e.g. Gitpod or VSCode, open the **Terminal**. 
 
 3. Change the working directory to the location where you want this cloned directory to be.
 
@@ -147,7 +147,7 @@ This project can be ran locally using the following steps:
 
 `git clone https://github.com/USERNAME/REPOSITORY`
 
-5. Press Enter, and now the local clone will be created.
+5. Press **Enter** button, and now the local clone will be created.
 
 
 ---
