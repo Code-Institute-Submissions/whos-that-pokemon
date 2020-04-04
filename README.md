@@ -134,6 +134,22 @@ To deploy my website to GitHub Pages, the following steps were taken:
 
 ### Running the code locally
 
+This project can be ran locally using the following steps:
+1. Go to the Repository link at the top of this document and click on the 'Clone or Download' button and copy the link provided.
+
+![https://res.cloudinary.com/orla2020/image/upload/v1586003823/milestone-two/clone-repository_foxhob.png](https://res.cloudinary.com/orla2020/image/upload/v1586003823/milestone-two/clone-repository_foxhob.png)
+
+2. In your IDE of choice, e.g. Gitpod or VSCode, open the Terminal. 
+
+3. Change the working directory to the location where you want this cloned directory to be.
+
+4. Type `git clone` into your Terminal and paste the copied URL from Step 1, e.g.:
+
+`git clone https://github.com/USERNAME/REPOSITORY`
+
+5. Press Enter, and now the local clone will be created.
+
+
 ---
 
 ## Credits
