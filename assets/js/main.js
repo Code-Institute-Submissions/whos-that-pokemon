@@ -46,9 +46,11 @@ const fetchPokemon = async () => {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
             1}.png`,
     }));
+
     pokeData = shuffleMon(pokemon);
-    pushMonToDOM();
     console.log(pokeData);
+    pushMonToDOM();
+
 };
 
 function pushMonToDOM() {
@@ -59,9 +61,8 @@ function pushMonToDOM() {
     }
 
     currentMon = [];
-    console.log(currentMon);
     currentMon.push(...pokeData.slice(0, 4));
-    console.log('pushing pokemon to DOM');
+    console.log(currentMon);
 
     questionCounter++;
     questionData.innerText = `${questionCounter}/${questionMax}`;
@@ -72,10 +73,15 @@ function pushMonToDOM() {
 }
 
 // shuffle random 4 pokemon in sliced array
-shuffleFour = (arrayMon) => Math.floor(Math.random() * arrayMon.length);
+function shuffleFour(arrayMon) {
+    return Math.floor(Math.random() * arrayMon.length);
+}
 
 // function to randomly sort pokemon data
-shuffleMon = (array) => array.sort(() => Math.random() - 0.5);
+function shuffleMon (array) {
+    return array.sort(() => Math.random() - 0.5);
+    console.log('shuffling');
+}
 
 function displayMonImage() {
     pokemon.src = matchMon.image;
@@ -83,19 +89,17 @@ function displayMonImage() {
 }
 
 function loadPokemonNames() {
-    shuffleMon(userChoice);
     userChoice[0].innerText = currentMon[3].name.toUpperCase();
     userChoice[2].innerText = currentMon[1].name.toUpperCase();
     userChoice[1].innerText = currentMon[0].name.toUpperCase();
     userChoice[3].innerText = currentMon[2].name.toUpperCase();
-    console.log('loading answers to button');
 }
 
 function generateNewMon() {
     matchMon = currentMon[shuffleFour(currentMon)];
     pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
+    console.log(matchMon);
     console.log(pokeData);
-    console.log("shuffling through new Pokemon");
 
     displayMonImage();
     loadPokemonNames();
@@ -110,20 +114,18 @@ function checkPokemonAnswer() {
         console.log("looping through userChoice")
         answer.addEventListener('click', () => {
             const selectedChoice = event.target;
-            console.log(selectedChoice)
-            let correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
-            console.log("Answer is " + correctChoice)
+            const correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
 
             if (correctChoice) {
                 Swal.fire(answerAlert(true)).then((result) => {
                     if (result) {
                         incrementScore(scoreBonus);
-                        pushMonToDOM();
+                        pushMonToDOM(shuffleMon(pokeData));
                     }
                 });
             } else Swal.fire(answerAlert(false)).then((result) => {
                 if (result) {
-                    pushMonToDOM();
+                    pushMonToDOM(shuffleMon(pokeData));
                 }
             });
 
@@ -160,13 +162,11 @@ function answerAlert(correctChoice) {
 //increments score if answer is correct
 function incrementScore(num) {
     scoreCounter += num;
-    console.log(scoreCounter);
     scoreData.innerText = scoreCounter;
 }
 
 function gameOver() {
     finalScore.innerText = scoreCounter;
-    console.log('calling final score');
 
     if (scoreCounter <= 500) {
         scoreReview.innerHTML = `
