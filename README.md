@@ -5,6 +5,11 @@ Every year, the Pokémon World Championships is held in August of each year, bri
 
 As part of the event, the organisers wanted a fun quiz app created that would entertain attendees and test their Pokémon knowledge. When users get a certain amount of points, they can redeem their points at the 'Poké Prizes' counter at the event to win Pokémon prizes.
 
+## Table of Contents
+
+1. [**UX**](#UX)
+2. [**Features**](#features)
+
 ---
 
 ## UX
@@ -120,10 +125,6 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 - Largest function has 13 statements in it, while the median is 2.
 - The most complex function has a cyclomatic complexity value of 5 while the median is 1.
 
-#### Chrome DevTools
-- Used `console.log` in Javascript to check that certain functions were working. Also used this method to test that variables were outputing the intended values.
-- Used the `debugger`statement in Javascript to stop the execution of Javascript, set breakpoints and walk through my code step by step.
-
 ### Manual Tests
 
 To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers. 
@@ -144,6 +145,13 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 - iPhone XR
 - Samsung Galaxy 8
 - iPhone 5S
+
+#### Chrome DevTools
+- Used `console.log` in Javascript to check that certain functions were working. Also used this method to test that variables were outputing the intended values.
+- Used the `debugger`statement in Javascript to stop the execution of Javascript, set breakpoints and walk through my code step by step.
+
+#### Other
+- [Responsinator](https://www.responsinator.com/) was also used in conjuction with the above methods to check the responsiveness of my website across many devices at the same time. 
 
 ---
 
