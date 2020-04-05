@@ -48,7 +48,6 @@ const fetchPokemon = async () => {
     }));
 
     pokeData = shuffleMon(pokemon);
-    console.log(pokeData);
     pushMonToDOM();
 
 };
@@ -62,7 +61,6 @@ function pushMonToDOM() {
 
     currentMon = [];
     currentMon.push(...pokeData.slice(0, 4));
-    console.log(currentMon);
 
     questionCounter++;
     questionData.innerText = `${questionCounter}/${questionMax}`;
@@ -80,12 +78,10 @@ function shuffleFour(arrayMon) {
 // function to randomly sort pokemon data
 function shuffleMon (array) {
     return array.sort(() => Math.random() - 0.5);
-    console.log('shuffling');
 }
 
 function displayMonImage() {
     pokemon.src = matchMon.image;
-    console.log('displaying image');
 }
 
 function loadPokemonNames() {
@@ -98,8 +94,6 @@ function loadPokemonNames() {
 function generateNewMon() {
     matchMon = currentMon[shuffleFour(currentMon)];
     pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
-    console.log(matchMon);
-    console.log(pokeData);
 
     displayMonImage();
     loadPokemonNames();
@@ -131,7 +125,6 @@ function checkPokemonAnswer() {
 
         });
     });
-    console.log('check done')
 }
 
 function answerAlert(correctChoice) {
