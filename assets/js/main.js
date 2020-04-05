@@ -1,13 +1,11 @@
 // setting DOM elements and url for fetching
 const userChoice = Array.from(document.getElementsByClassName('poke-name'));
-const pokeImage = document.getElementById('pokeImg');
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
 const gameContainer = document.getElementById('game-container');
 const endResult = document.getElementById('end-result');
 const pokemon = document.querySelector('#pokeImg img');
 const finalScore = document.getElementById('final-score');
-const restart = document.getElementById('restart');
 const scoreReview = document.getElementById('score-review');
 const controls = document.getElementById('controls');
 let currentMon = [];
@@ -184,14 +182,13 @@ function gameOver() {
         <p class="pt-4">#973836</p>`;
     } else {
         scoreReview.innerHTML = `
-        <h2>Error loading score, please try again or contact support<h2>`
+        <h2>Error loading score, please try again or contact support<h2>`;
     }
 
 }
 
 function restartGame() {
     scoreCounter = 0;
-    console.log('score on restart is ' + scoreCounter);
     questionCounter = 0;
     gameContainer.classList.remove("d-none");
     endResult.classList.add("d-none");
