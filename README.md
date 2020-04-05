@@ -90,6 +90,7 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 ### Other
 - Github - Used for remote storage of my project.
 - Git - Used for version control.
+
 ---
 
 ## Testing
@@ -103,16 +104,46 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 #### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 - No errors, 2 warnings found.
-  * "Imported style sheets are not checked in direct input and file upload modes" - This was in reference to the imported Google Fonts into my CSS stylesheet. I removed the @import from CSS and swapped with embed link to my head tag in HTML.
-  * "-webkit-filter is an unknown vendor extension" - This was in reference to the webkit-filter vendor extension used in the silhouette class. This was removed.
+  * **_Imported style sheets are not checked in direct input and file upload modes_** - This was in reference to the imported Google Fonts into my CSS stylesheet. I removed the @import from CSS and swapped with embed link to my head tag in HTML.
+  * **_-webkit-filter is an unknown vendor extension_** - This was in reference to the webkit-filter vendor extension used in the silhouette class. This was removed.
 
 #### [CSS Lint](http://csslint.net/index.html)
 
 - No errors, 7 warnings found.
-  * "Beware of broken box size. Using width/height with border can sometimes make elements larger than you expect " - This was in reference to the box model and sizing. I added 'box-sizing: border-box' to my buttons as it allowed me to take padding and border into my box-size. Doing this threw up 3 new errors (outlined in next bullet point)
-  * "Disallow use of box-sizing	The box-sizing property isn't supported in IE6 and IE7." I ignored this as IE6 and IE7 are no longer supported.
-  * "Disallow IDs in selectors. Don't use IDs in selectors" - This refered to the use of an ID selector to style a button. I swapped the ID for a class for best practice.
+  * **_Beware of broken box size. Using width/height with border can sometimes make elements larger than you expect_** - This was in reference to the box model and sizing. I added 'box-sizing: border-box' to my buttons as it allowed me to take padding and border into my box-size. Doing this threw up 3 new errors (outlined in next bullet point)
+  * **_Disallow use of box-sizing	The box-sizing property isn't supported in IE6 and IE7_** - I ignored this as IE6 and IE7 are no longer supported.
+  * **_Disallow IDs in selectors. Don't use IDs in selectors_** - This refered to the use of an ID selector to style a button. I swapped the ID for a class for best practice.
 
+#### [JS Hint](https://jshint.com/)
+- There are 21 functions in this file.
+- Function with the largest signature take 2 arguments, while the median is 0.
+- Largest function has 13 statements in it, while the median is 2.
+- The most complex function has a cyclomatic complexity value of 5 while the median is 1.
+
+#### Chrome DevTools
+- Used `console.log` in Javascript to check that certain functions were working. Also used this method to test that variables were outputing the intended values.
+- Used the `debugger`statement in Javascript to stop the execution of Javascript, set breakpoints and walk through my code step by step.
+
+### Manual Tests
+
+To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers. 
+
+#### Browser Compatibility
+
+- Chrome - no issues.
+- Firefox - no issues.
+- Safari - minor lag loading Pokémon image after feedback modal.
+- Microsoft Edge - no issues.
+- Opera - no issues.
+- Internet Explorer - I did not test on this browser.
+
+#### Devices
+
+- Huawei P20 Pro
+- iPhone 11 Pro
+- iPhone XR
+- Samsung Galaxy 8
+- iPhone 5S
 
 ---
 
@@ -164,6 +195,7 @@ All text in the project was written by myself, apart from the generated names of
 
 ### Code
 
+- Code for fetching the Pokémon API and filtering just 150 Pokémon from the API was used from the help of this [blog](https://www.jamesqquick.com/blog/build-a-pokedex-with-vanilla-javascript-part-2) and [video](https://www.youtube.com/watch?v=T-VQUKeSU1w&t=1405s) from Developer James Q Quick. 
 - The design for the buttons was inspired by the following [Code Pen](https://codepen.io/tiffachoo/pen/aKKZrB) by Tiffany Choong
 
 ### Acknowledgements
