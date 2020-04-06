@@ -20,12 +20,12 @@ The primary goal of the quiz is to provide a clean, intuitive and fun game to en
 
 #### User Stories
 
-1.	As a user I want to play something fun to challenge my Pokémon knowledge.
-2.	As a user I want to pass the time at the convention with a fun game.
-3.	As a user I want large, easy to press buttons, so that I can press them on my mobile.
-4.	As a user I want feedback on whether my answer is correct or not.
-5.	As a user I want to know what my score is after each question.
-6.	As a user I want to restart the game so I can try improve my score.
+1.	As a user, I want to be able to begin playing the game easily.
+2.	As a user I want large, easy to press buttons, so that I can press them on my mobile.
+3.	As a user I want feedback on whether my answer is correct or not.
+4.	As a user I want to know what my score is after each question.
+5.	As a user I want to restart the game so I can try improve my score.
+6.  As a user I want to know how to redeem my points to win a prize.
 
 
 ### Wireframes
@@ -78,6 +78,10 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 #### Pokédex
 - A separate section to display all 150 Pokémon would be a ‘nice to have’ feature, which would display Pokémon names, sprites, type and number. 
 
+#### Scoreboard
+- A scoreboard to track progress compared to various attempts.
+
+
 
 ---
 
@@ -88,13 +92,17 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 - CSS - For custom styles on my app.
 - Bootstrap - The framework behind my app's structure and layout, prioritising mobile first design.
 - Javascript - Primary function of the app for all user interaction.
-- Photoshop - Photoshop was used to create the app's logo / header image.
+- jQuery – Used to simplify some button manipulations
+- Google Fonts – this project used one font from Google Fonts
 - SweetAlert2 - Used to show feedback after the user selects an answer.
 
 
 ### Other
 - Github - Used for remote storage of my project.
 - Git - Used for version control.
+- Photoshop - Photoshop was used to create the app's logo / header image.
+- Gitpod – IDE of choice for this project
+- Unicorn Revealer – Used to inspect the UI and check that padding and margins were working as normal.
 
 ---
 
@@ -127,7 +135,7 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 
 ### Manual Tests
 
-To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers. 
+Unfortunately, Jasmine was too difficult for me to understand. I found it a little difficult to get to grips with JavaScript, so Jasmine was not necessary to complete this project. To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers. 
 
 #### Browser Compatibility
 
@@ -152,6 +160,27 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 
 #### Other
 - [Responsinator](https://www.responsinator.com/) was also used in conjuction with the above methods to check the responsiveness of my website across many devices at the same time. 
+
+### User Story Testing
+
+1.	As a user, I want to be able to begin playing the game easily.
+:white_check_mark: A game can be started in just one click, by clicking the ‘start game’ button on the landing page. 
+2.	As a user I want large, easy to press buttons, so that I can press them on my mobile.
+:white_check_mark: Buttons on the landing page and game page display the full width of the screen when the game is viewed on mobile.
+3.	As a user I want feedback on whether my answer is correct or not.  
+:white_check_mark: After the user selects an answer, a popup modal gives the user visual feedback on the correct Pokémon name matched to the Pokémon sprite  
+:white_check_mark: The modal displays a green tick mark on a successful match  
+:white_check_mark: The modal displays a red X on an unsuccessful match
+:white_check_mark: The correct Pokémon sprite is displayed
+4.	As a user I want to know what my score is after each question.  
+:white_check_mark: The score counter in the top right counter is updated after every successful match and the user can see this at all times
+5.	As a user I want to restart the game so I can try improving my score.  
+:white_check_mark: A restart button is visible throughout the main game, and on the end game screen. It is represented by a restart icon obtained from Fontawesome
+6.	As a user I want to know how to redeem my points to win a prize.  
+:white_check_mark: At the very end of the game, the user is given feedback based on their score.  
+:white_check_mark: They are given information on what their prize is and where they can obtain their prize.  
+ :white_check_mark: They are given an ID number that correlates with their score so they can obtain their prize
+
 
 ---
 
