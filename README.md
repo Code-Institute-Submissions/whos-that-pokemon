@@ -163,20 +163,20 @@ Unfortunately, Jasmine was too difficult for me to understand. I found it a litt
 
 ### User Story Testing
 
-1.	As a user, I want to be able to begin playing the game easily.
+1.	**As a user, I want to be able to begin playing the game easily.**  
 :white_check_mark: A game can be started in just one click, by clicking the ‘start game’ button on the landing page. 
-2.	As a user I want large, easy to press buttons, so that I can press them on my mobile.
+2.	**As a user I want large, easy to press buttons, so that I can press them on my mobile.**   
 :white_check_mark: Buttons on the landing page and game page display the full width of the screen when the game is viewed on mobile.
-3.	As a user I want feedback on whether my answer is correct or not.  
+3.	**As a user I want feedback on whether my answer is correct or not.**  
 :white_check_mark: After the user selects an answer, a popup modal gives the user visual feedback on the correct Pokémon name matched to the Pokémon sprite  
 :white_check_mark: The modal displays a green tick mark on a successful match  
-:white_check_mark: The modal displays a red X on an unsuccessful match
+:white_check_mark: The modal displays a red X on an unsuccessful match  
 :white_check_mark: The correct Pokémon sprite is displayed
-4.	As a user I want to know what my score is after each question.  
+4.	**As a user I want to know what my score is after each question.**  
 :white_check_mark: The score counter in the top right counter is updated after every successful match and the user can see this at all times
-5.	As a user I want to restart the game so I can try improving my score.  
+5.	**As a user I want to restart the game so I can try improving my score.**  
 :white_check_mark: A restart button is visible throughout the main game, and on the end game screen. It is represented by a restart icon obtained from Fontawesome
-6.	As a user I want to know how to redeem my points to win a prize.  
+6.	**As a user I want to know how to redeem my points to win a prize.**  
 :white_check_mark: At the very end of the game, the user is given feedback based on their score.  
 :white_check_mark: They are given information on what their prize is and where they can obtain their prize.  
  :white_check_mark: They are given an ID number that correlates with their score so they can obtain their prize
