@@ -1,4 +1,4 @@
-// setting DOM elements and url for fetching
+// setting DOM elements
 const userChoice = Array.from(document.getElementsByClassName('poke-name'));
 const questionData = document.getElementById('questionCount');
 const scoreData = document.getElementById('scoreCount');
@@ -17,11 +17,10 @@ let scoreBonus = 100;
 const questionMax = 20;
 
 /*
-**************************
     Event listeners
-**************************
 */
 
+// start game button
 $("#start-game").click(function () {
     $("#landing-page").hide();
     gameContainer.classList.remove("d-none");
@@ -29,12 +28,22 @@ $("#start-game").click(function () {
     fetchPokemon();
 });
 
+// restart button
+$('#restart').click(function () {
+    restartGame();
+});
+
 /*
-**************************
     Functions
-**************************
 */
-// with help of James Q Quick video on Pokemon API
+
+/*
+Fetches Pokemon API.
+Defines variable that contains only the
+Pokemon name and image fof the game.
+Sets the limit to 150 Pokemon.
+Randomises Pokemon in an array.
+*/
 const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
     const res = await fetch(url);
@@ -45,11 +54,17 @@ const fetchPokemon = async () => {
             1}.png`,
     }));
 
-    pokeData = shuffleMon(pokemon);
+    pokeData = randomisePokemon(pokemon);
+    console.log(pokeData);
     pushMonToDOM();
 
 };
 
+/*
+Slices Pokemon array of 150 into an array
+of 4 Pokemon.
+Pushes 4 Pokemon into an empty array.
+*/
 function pushMonToDOM() {
     if (questionCounter >= questionMax) {
         gameContainer.classList.add("d-none");
@@ -64,46 +79,66 @@ function pushMonToDOM() {
     questionData.innerText = `${questionCounter}/${questionMax}`;
     scoreData.innerText = `${scoreCounter}`;
 
-    generateNewMon();
-
+    generateNewPokemon();
 }
 
-// shuffle random 4 pokemon in sliced array
-function shuffleFour(arrayMon) {
+// Used to shuffle Pokemon and output a number 
+function shufflePokemon(arrayMon) {
     return Math.floor(Math.random() * arrayMon.length);
 }
 
-// function to randomly sort pokemon data
-function shuffleMon (array) {
+/* 
+Function to randomly sort pokemon data each
+time it is called.
+*/
+function randomisePokemon(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-function displayMonImage() {
-    pokemon.src = matchMon.image;
+/* 
+Attaches the current 'Pokemon to match' to
+the image source in the HTML
+*/
+function displayPokemonImage() {
+    pokemon.src = pokemonToMatch.image;
 }
 
+/*
+assigns the current Pokemon name to the
+inner text of the user choice button
+*/
 function loadPokemonNames() {
-    userChoice[0].innerText = currentMon[3].name.toUpperCase();
-    userChoice[2].innerText = currentMon[1].name.toUpperCase();
-    userChoice[1].innerText = currentMon[0].name.toUpperCase();
-    userChoice[3].innerText = currentMon[2].name.toUpperCase();
+    userChoice[0].innerText = currentMon[0].name.toUpperCase();
+    userChoice[1].innerText = currentMon[1].name.toUpperCase();
+    userChoice[2].innerText = currentMon[2].name.toUpperCase();
+    userChoice[3].innerText = currentMon[3].name.toUpperCase();
 }
 
-function generateNewMon() {
-    matchMon = currentMon[shuffleFour(currentMon)];
+/*
+Generates a random Pokemon from the
+current Pokemon array.
+Filters out the current Pokemon so it does
+not show up again.
+*/
+function generateNewPokemon() {
+    pokemonToMatch = currentMon[shufflePokemon(currentMon)];
     pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
 
-    displayMonImage();
+    displayPokemonImage();
     loadPokemonNames();
     checkPokemonAnswer();
 
 }
 
-// function to check user input
+/*
+Checks user input against the game question.
+Contains a loop with an event listener that
+listens out for the user's choice.
+If correct or incorrect it triggers the
+appropriate alert.
+*/
 function checkPokemonAnswer() {
-    console.log("checking answer")
     userChoice.forEach(answer => {
-        console.log("looping through userChoice")
         answer.addEventListener('click', () => {
             const selectedChoice = event.target;
             const correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
@@ -112,12 +147,12 @@ function checkPokemonAnswer() {
                 Swal.fire(answerAlert(true)).then((result) => {
                     if (result) {
                         incrementScore(scoreBonus);
-                        pushMonToDOM(shuffleMon(pokeData));
+                        pushMonToDOM(randomisePokemon(pokeData));
                     }
                 });
             } else Swal.fire(answerAlert(false)).then((result) => {
                 if (result) {
-                    pushMonToDOM(shuffleMon(pokeData));
+                    pushMonToDOM(randomisePokemon(pokeData));
                 }
             });
 
@@ -125,6 +160,10 @@ function checkPokemonAnswer() {
     });
 }
 
+/*
+Sweet Alert function that is triggered
+after user input has been checked.
+*/
 function answerAlert(correctChoice) {
     const pokemonAlert = {
         position: 'center',
@@ -150,12 +189,21 @@ function answerAlert(correctChoice) {
     return pokemonAlert;
 }
 
-//increments score if answer is correct
+/*
+Increments score if answer is correct.
+Writes the score to the screen.
+*/
 function incrementScore(num) {
     scoreCounter += num;
     scoreData.innerText = scoreCounter;
 }
 
+/*
+Function that is triggered when max
+questions are reached.
+Writes text to the screen depending on
+user score scenario.
+*/
 function gameOver() {
     finalScore.innerText = scoreCounter;
 
@@ -187,6 +235,12 @@ function gameOver() {
 
 }
 
+/*
+Restarts the game.
+Sets the score and questions to 0.
+Removes end game screen and shows main
+game container.
+*/
 function restartGame() {
     scoreCounter = 0;
     questionCounter = 0;
@@ -194,8 +248,3 @@ function restartGame() {
     endResult.classList.add("d-none");
     fetchPokemon();
 }
-
-// restart button
-$('#restart').click(function () {
-    restartGame();
-});
