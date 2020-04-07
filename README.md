@@ -234,6 +234,7 @@ All text in the project was written by myself, apart from the generated names of
 
 - Code for fetching the Pokémon API and filtering just 150 Pokémon from the API was used from the help of this [blog](https://www.jamesqquick.com/blog/build-a-pokedex-with-vanilla-javascript-part-2) and [video](https://www.youtube.com/watch?v=T-VQUKeSU1w&t=1405s) from Developer James Q Quick. 
 - The design for the buttons was inspired by the following [Code Pen](https://codepen.io/tiffachoo/pen/aKKZrB) by Tiffany Choong
+- Code for randomly sorting data was obtained from the [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k) Youtube channel
 
 ### Acknowledgements
 
