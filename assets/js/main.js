@@ -122,7 +122,7 @@ not show up again.
 */
 function generateNewPokemon() {
     pokemonToMatch = currentMon[shufflePokemon(currentMon)];
-    pokeData = pokeData.filter(pokemon => pokemon.name !== matchMon.name);
+    pokeData = pokeData.filter(pokemon => pokemon.name !== pokemonToMatch.name);
 
     displayPokemonImage();
     loadPokemonNames();
@@ -141,7 +141,7 @@ function checkPokemonAnswer() {
     userChoice.forEach(answer => {
         answer.addEventListener('click', () => {
             const selectedChoice = event.target;
-            const correctChoice = selectedChoice.innerText.toLowerCase() == matchMon.name.toLowerCase();
+            const correctChoice = selectedChoice.innerText.toLowerCase() == pokemonToMatch.name.toLowerCase();
 
             if (correctChoice) {
                 Swal.fire(answerAlert(true)).then((result) => {
@@ -175,14 +175,14 @@ function answerAlert(correctChoice) {
 
     if (correctChoice) {
         pokemonAlert.title = 'Correct!';
-        pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
-        pokemonAlert.imageUrl = `${matchMon.image}`;
+        pokemonAlert.text = `The answer is ${pokemonToMatch.name.toUpperCase()}.`;
+        pokemonAlert.imageUrl = `${pokemonToMatch.image}`;
         pokemonAlert.icon = 'success';
         pokemonAlert.timer = 2000;
     } else {
         pokemonAlert.title = 'Uh oh!';
-        pokemonAlert.text = `The answer is ${matchMon.name.toUpperCase()}.`;
-        pokemonAlert.imageUrl = `${matchMon.image}`;
+        pokemonAlert.text = `The answer is ${pokemonToMatch.name.toUpperCase()}.`;
+        pokemonAlert.imageUrl = `${pokemonToMatch.image}`;
         pokemonAlert.icon = 'error';
         pokemonAlert.timer = 2000;
     }
