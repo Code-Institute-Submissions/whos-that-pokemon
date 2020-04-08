@@ -14,8 +14,22 @@ As part of the event, the organisers wanted a fun quiz app created that would en
     - [**Design Choices**](#design-choices)
 2. [**Features**](#features)
     - [**Existing Features**](#existing-features)
-    - [**Recommendations for future implementation**](#recommendations-for-future-implementation)   
-
+    - [**Recommendations for future implementation**](#recommendations-for-future-implementation)
+3. [**Technology**](#technology)
+    - [**Frontend Technologies used**](#frontend-technologies-used)
+    - [**Other**](#other)
+4. [**Testing**](#testing)
+    - [**Validators used**](#validators-used)
+    - [**Manual Tests**](#manual-tests)
+    - [**User Story Testing**](#user-story-testing)
+5. [**Deployment**](#deployment)
+    - [**Publishing to GitHub Pages**](#publishing-to-github-pages)
+    - [**Running the code locally**](#running-the-code-locally)
+6. [**Credits**](#credits)
+    - [**Content**](#content)
+    - [**Media**](#media)
+    - [**Code**](#code)
+    - [**Acknowledgements**](#acknowledgements)
 
 ---
 
