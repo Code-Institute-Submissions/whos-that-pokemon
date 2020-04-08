@@ -8,7 +8,14 @@ As part of the event, the organisers wanted a fun quiz app created that would en
 ## Table of Contents
 
 1. [**UX**](#UX)
+    - [**Project Goals**](#project-goals)
+    - [**User Stories**](#user-stories)
+    - [**Wireframes**](#wireframes)
+    - [**Design Choices**](#design-choices)
 2. [**Features**](#features)
+    - [**Existing Features**](#existing-features)
+    - [**Recommendations for future implementation**](#recommendations-for-future-implementation)   
+
 
 ---
 
@@ -52,6 +59,8 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 ---
 ## Features
 
+### Existing Features
+
 #### Game Dashboard
 - The game dashboard contains the question count, score, Pokémon silhouette, 4 answer choice buttons, info, help and reset buttons.
 #### Reset Button
@@ -76,10 +85,10 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 #### Other modes
 - I would like to add other modes that include other Pokémon generations for more of a challenge. For example, easy mode would be 150 Pokémon (Generation 1), medium mode would have 386 (Generation 1 – 3), hard mode would have 721 (Generation 1 – 6) and Pokémon master mode would have all 894 (Generation 1 – 8).
 #### Pokédex
-- A separate section to display all 150 Pokémon would be a ‘nice to have’ feature, which would display Pokémon names, sprites, type and number. 
+- A separate Pokédex section to display all 894 Pokémon would be a ‘nice to have’ feature, which would display Pokémon names, their sprites, their type and their number. 
 
 #### Scoreboard
-- A scoreboard to track progress compared to various attempts.
+- A scoreboard that allows the user to track their progress and compare it to previous attempts. The scoreboard would also allow the user to compare their score to other attendees of the event to motivate them to get a higher score.
 
 
 
