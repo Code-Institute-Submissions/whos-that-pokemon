@@ -144,7 +144,7 @@ The primary colour choice is red and white, similar to the Pokémon brand. This 
 
 ### Manual Tests
 
-Unfortunately, Jasmine was too difficult for me to understand. I found it a little difficult to get to grips with JavaScript, so Jasmine was not necessary to complete this project. To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers. 
+Unfortunately, Jasmine was too difficult for me to understand. I found it a little difficult to get to grips with JavaScript, so Jasmine was not necessary to complete this project as I there was a major gap of knowledge there. To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers. 
 
 #### Browser Compatibility
 
