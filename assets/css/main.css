@@ -3,7 +3,7 @@ body {
 }
 
 .main-section {
-    margin-top: 3.2em;
+    margin-top: 30px;
     min-height: 65vh;
 }
 
@@ -22,15 +22,10 @@ body {
     margin: auto;
 }
 
-/* https://stackoverflow.com/questions/42535432/colored-silhouette-using-css */
 .silhouette {
     filter: grayscale(100%) brightness(0);
     opacity: 1;
 }
-
-/* .answer-container {
-    border: 5px double #2b2b2b;
-} */
 
 .start-game-btn {
     height: 70px;
@@ -62,12 +57,10 @@ body {
      background-color: #c7c7c7;
 }
 
-/*https://stackoverflow.com/questions/18153234/center-a-column-using-twitter-bootstrap-3 */
 .col-center-block {
     float: none;
     display: block;
     margin: 0 auto;
-    /* margin-left: auto; margin-right: auto; */
 }
 
 .your-score, .final-score {
