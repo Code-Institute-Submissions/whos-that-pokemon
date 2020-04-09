@@ -5,9 +5,11 @@
 # [Who's that Pokémon?](https://orlamadden.github.io/whos-that-pokemon/)
 Milestone project #2 for the Code Institute.
 
-Every year, the Pokémon World Championships is held in August of each year, bringing together the best Pokémon TCG and video game players from around the globe. This year’s event is being held in the Excel in London, and is estimated at hosting 5,000 people including contestants, their family and their friends.
+## Project Overview
 
-As part of the event, the organisers wanted a fun quiz app created that would entertain attendees and test their Pokémon knowledge. When users get a certain amount of points, they can redeem their points at the 'Poké Prizes' counter at the event to win Pokémon prizes.
+Every year, the Pokémon World Championships is held in August of each year, bringing together the best Pokémon Trading Card Game and Pokémon Video Game series players from around the globe. This year’s event is being held in the Excel in London, and is estimated at hosting 5,000 people including contestants,their family and their friends.
+
+As part of the event, the organisers wanted a fun quiz app created that would entertain attendees of all ages to test their Pokémon knowledge.An incentive to play the game is gaining points to redeem at the 'Poké Prizes' counter for exclusive prizes.
 
 ## Table of Contents
 
@@ -258,8 +260,10 @@ All text in the project was written by myself, apart from the generated names of
 ### Code
 
 - Code for fetching the Pokémon API and filtering just 150 Pokémon from the API was used from the help of this [blog](https://www.jamesqquick.com/blog/build-a-pokedex-with-vanilla-javascript-part-2) and [video](https://www.youtube.com/watch?v=T-VQUKeSU1w&t=1405s) from Developer James Q Quick. 
-- The design for the buttons was inspired by the following [Code Pen](https://codepen.io/tiffachoo/pen/aKKZrB) by Tiffany Choong
-- Code for randomly sorting data was obtained from the [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k) Youtube channel
+- The design for the buttons was inspired by the following [Code Pen](https://codepen.io/tiffachoo/pen/aKKZrB) by Tiffany Choong.
+- Code for randomly sorting data was obtained from the [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k) Youtube channel.
+- Assistance centering a column in Bootstrap from this [Stackoverflow]( https://stackoverflow.com/questions/18153234/center-a-column-using-twitter-bootstrap-3) post.
+- Code taken and edited to make the Pokemon sprites a silhouette from this [Stackoverflow](https://stackoverflow.com/questions/42535432/colored-silhouette-using-css) post.
 
 ### Acknowledgements
 
