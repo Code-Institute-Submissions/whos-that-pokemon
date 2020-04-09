@@ -1,3 +1,7 @@
+<div align="center">
+<img src="https://res.cloudinary.com/orla2020/image/upload/v1586417495/milestone-two/promo-shot_lkbjwm.jpg" alt="Screenshot: Parental check modal" >
+</div>
+
 # [Who's that Pokémon?](https://orlamadden.github.io/whos-that-pokemon/)
 Milestone project #2 for the Code Institute.
 
