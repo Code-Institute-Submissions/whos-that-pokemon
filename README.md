@@ -9,7 +9,7 @@ Milestone project #2 for the Code Institute.
 
 Every year, the Pokémon World Championships is held in August of each year, bringing together the best Pokémon Trading Card Game and Pokémon Video Game series players from around the globe. This year’s event is being held in the Excel in London, and is estimated at hosting 5,000 people including contestants,their family and their friends.
 
-As part of the event, the organisers wanted a fun quiz app created that would entertain attendees of all ages to test their Pokémon knowledge.An incentive to play the game is gaining points to redeem at the 'Poké Prizes' counter for exclusive prizes.
+As part of the event, the organisers wanted a fun quiz app created that would entertain attendees of all ages and test their Pokémon knowledge. An incentive to play the game is gaining points to redeem at the 'Poké Prizes' counter for exclusive prizes.
 
 ## Table of Contents
 
