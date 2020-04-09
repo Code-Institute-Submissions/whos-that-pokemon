@@ -204,7 +204,6 @@ Unfortunately, Jasmine was too difficult for me to understand. I found it a litt
 :white_check_mark: They are given information on what their prize is and where they can obtain their prize.  
  :white_check_mark: They are given an ID number that correlates with their score so they can obtain their prize
 
-
 ---
 
 ## Deployment
@@ -240,7 +239,6 @@ This project can be ran locally using the following steps:
 
 5. Press **Enter** button, and now the local clone will be created.
 
-
 ---
 
 ## Credits
@@ -264,6 +262,7 @@ All text in the project was written by myself, apart from the generated names of
 Many thanks to:
 - Code Institute Tutor Anna for opening my eyes to the wonderful debugger tool in DevTools
 - Code Institute Tutor Samantha for helping me narrow down where a particular issue was in one of my functions
+- My mentor Antonion for his time, suggestions on improvements and his overall feedback throughout the project
 
 ---
 
