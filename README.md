@@ -264,6 +264,7 @@ All text in the project was written by myself, apart from the generated names of
 - Code for randomly sorting data was obtained from the [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k) Youtube channel.
 - Assistance centering a column in Bootstrap from this [Stackoverflow]( https://stackoverflow.com/questions/18153234/center-a-column-using-twitter-bootstrap-3) post.
 - Code taken and edited to make the Pokemon sprites a silhouette from this [Stackoverflow](https://stackoverflow.com/questions/42535432/colored-silhouette-using-css) post.
+- Code assistance with function that checks through user answers after user input from this [video](https://www.youtube.com/watch?v=zZdQGs62cR8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=4).
 
 ### Acknowledgements
 
