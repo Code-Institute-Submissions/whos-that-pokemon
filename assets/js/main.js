@@ -150,13 +150,15 @@ function checkPokemonAnswer() {
             const correctChoice = selectedChoice.innerText.toLowerCase() == pokemonToMatch.name.toLowerCase();
 
             if (correctChoice) {
-                Swal.fire(answerAlert(true)).then((result) => {
+                Swal.fire(answerAlert(true))
+                .then((result) => {
                     if (result) {
                         incrementScore(scoreBonus);
                         pushMonToDOM(randomisePokemon(pokeData));
                     }
                 });
-            } else Swal.fire(answerAlert(false)).then((result) => {
+            } else Swal.fire(answerAlert(false))
+            .then((result) => {
                 if (result) {
                     pushMonToDOM(randomisePokemon(pokeData));
                 }
