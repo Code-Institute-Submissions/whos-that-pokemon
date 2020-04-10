@@ -1,10 +1,14 @@
+html {
+    height: 100%;
+}
+
 body {
     background-color: rgb(211, 37, 37);
 }
 
 .main-section {
     margin-top: 30px;
-    min-height: 65vh;
+    min-height: 75vh;
 }
 
 .about-game {
